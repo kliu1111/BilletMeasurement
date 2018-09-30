@@ -4,7 +4,7 @@ BilletMeasurement::BilletMeasurement(QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
-	//setWindowState(Qt::WindowMaximized);
+	//setWindowState(Qt::WindowMaximized);1111111
 }
 
 BilletMeasurement::~BilletMeasurement()
