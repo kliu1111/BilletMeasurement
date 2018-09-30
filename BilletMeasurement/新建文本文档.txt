@@ -1,3 +1,5 @@
 
 		treeWidget->header()->setSectionResizeMode(QHeaderView::Stretch);
 		verticalLayout->addWidget(treeWidget);
+
+toolButton_15->setStyleSheet("border:none;");
