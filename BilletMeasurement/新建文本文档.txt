@@ -1,0 +1,3 @@
+
+		treeWidget->header()->setSectionResizeMode(QHeaderView::Stretch);
+		verticalLayout->addWidget(treeWidget);
