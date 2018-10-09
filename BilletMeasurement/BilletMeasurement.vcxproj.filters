@@ -50,6 +50,9 @@
     <ClCompile Include="GeneratedFiles\qrc_BilletMeasurement.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="BaslerCamera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="BilletMeasurement.h">
@@ -65,6 +68,9 @@
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_BilletMeasurement.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaslerCamera.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

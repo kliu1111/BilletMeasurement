@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_BilletMeasurement_t {
-    QByteArrayData data[11];
-    char stringdata0[143];
+    QByteArrayData data[16];
+    char stringdata0[212];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,13 +39,20 @@ QT_MOC_LITERAL(6, 80, 14), // "SlotSetCamPara"
 QT_MOC_LITERAL(7, 95, 12), // "SlotOpenSync"
 QT_MOC_LITERAL(8, 108, 13), // "SlotCloseSync"
 QT_MOC_LITERAL(9, 122, 11), // "SlotSetSync"
-QT_MOC_LITERAL(10, 134, 8) // "InitSlot"
+QT_MOC_LITERAL(10, 134, 20), // "treeWidgetOpenEditor"
+QT_MOC_LITERAL(11, 155, 16), // "QTreeWidgetItem*"
+QT_MOC_LITERAL(12, 172, 4), // "item"
+QT_MOC_LITERAL(13, 177, 3), // "col"
+QT_MOC_LITERAL(14, 181, 21), // "treeWidgetCloseEditor"
+QT_MOC_LITERAL(15, 203, 8) // "InitSlot"
 
     },
     "BilletMeasurement\0SlotCamConnect\0\0"
     "SlotCamDisconnect\0SlotStartGrab\0"
     "SlotPauseGrab\0SlotSetCamPara\0SlotOpenSync\0"
-    "SlotCloseSync\0SlotSetSync\0InitSlot"
+    "SlotCloseSync\0SlotSetSync\0"
+    "treeWidgetOpenEditor\0QTreeWidgetItem*\0"
+    "item\0col\0treeWidgetCloseEditor\0InitSlot"
 };
 #undef QT_MOC_LITERAL
 
@@ -55,7 +62,7 @@ static const uint qt_meta_data_BilletMeasurement[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -63,15 +70,17 @@ static const uint qt_meta_data_BilletMeasurement[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   59,    2, 0x08 /* Private */,
-       3,    0,   60,    2, 0x08 /* Private */,
-       4,    0,   61,    2, 0x08 /* Private */,
-       5,    0,   62,    2, 0x08 /* Private */,
-       6,    0,   63,    2, 0x08 /* Private */,
-       7,    0,   64,    2, 0x08 /* Private */,
-       8,    0,   65,    2, 0x08 /* Private */,
-       9,    0,   66,    2, 0x08 /* Private */,
-      10,    0,   67,    2, 0x08 /* Private */,
+       1,    0,   69,    2, 0x08 /* Private */,
+       3,    0,   70,    2, 0x08 /* Private */,
+       4,    0,   71,    2, 0x08 /* Private */,
+       5,    0,   72,    2, 0x08 /* Private */,
+       6,    0,   73,    2, 0x08 /* Private */,
+       7,    0,   74,    2, 0x08 /* Private */,
+       8,    0,   75,    2, 0x08 /* Private */,
+       9,    0,   76,    2, 0x08 /* Private */,
+      10,    2,   77,    2, 0x08 /* Private */,
+      14,    0,   82,    2, 0x08 /* Private */,
+      15,    0,   83,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -81,6 +90,8 @@ static const uint qt_meta_data_BilletMeasurement[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 11, QMetaType::Int,   12,   13,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -101,11 +112,12 @@ void BilletMeasurement::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         case 5: _t->SlotOpenSync(); break;
         case 6: _t->SlotCloseSync(); break;
         case 7: _t->SlotSetSync(); break;
-        case 8: _t->InitSlot(); break;
+        case 8: _t->treeWidgetOpenEditor((*reinterpret_cast< QTreeWidgetItem*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 9: _t->treeWidgetCloseEditor(); break;
+        case 10: _t->InitSlot(); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObject BilletMeasurement::staticMetaObject = {
@@ -133,13 +145,13 @@ int BilletMeasurement::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 11;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 11)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 9;
+        _id -= 11;
     }
     return _id;
 }

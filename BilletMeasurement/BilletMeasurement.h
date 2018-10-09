@@ -13,6 +13,8 @@ public:
 	~BilletMeasurement();
 
 private:
+	QTreeWidgetItem *m_myItem;
+	int m_myCol;
 	Ui::BilletMeasurementClass ui;
 
 
@@ -36,6 +38,9 @@ private slots:
 	//设置同步板参数-----弹出设置窗口
 	void SlotSetSync();
 
+	void treeWidgetOpenEditor(QTreeWidgetItem *item, int col);
+
+	void treeWidgetCloseEditor();
 
 	void InitSlot();
 };

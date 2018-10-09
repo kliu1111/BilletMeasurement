@@ -63,14 +63,14 @@ public:
     QHBoxLayout *horizontalLayout_3;
     QTreeWidget *treeWidget;
     QGridLayout *Layout_ImageShow;
-    QLabel *label_6;
+    QLabel *label_RightUp;
     QLabel *label_7;
-    QLabel *label_5;
+    QLabel *label_LeftUp;
     QLabel *label_8;
     QLabel *label;
     QLabel *label_2;
-    QLabel *label_4;
-    QLabel *label_3;
+    QLabel *label_RightDown;
+    QLabel *label_LeftDown;
     QWidget *tab_measure;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout_5;
@@ -266,10 +266,6 @@ public:
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         treeWidget = new QTreeWidget(tab_cam);
-        new QTreeWidgetItem(treeWidget);
-        new QTreeWidgetItem(treeWidget);
-        new QTreeWidgetItem(treeWidget);
-        new QTreeWidgetItem(treeWidget);
         treeWidget->setObjectName(QStringLiteral("treeWidget"));
         QFont font1;
         font1.setFamily(QStringLiteral("ADMUI3Lg"));
@@ -282,6 +278,7 @@ public:
         treeWidget->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         treeWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         treeWidget->setSizeAdjustPolicy(QAbstractScrollArea::AdjustIgnored);
+        treeWidget->setEditTriggers(QAbstractItemView::DoubleClicked);
         treeWidget->setUniformRowHeights(true);
         treeWidget->header()->setCascadingSectionResizes(false);
 
@@ -293,11 +290,11 @@ public:
         Layout_ImageShow = new QGridLayout();
         Layout_ImageShow->setSpacing(6);
         Layout_ImageShow->setObjectName(QStringLiteral("Layout_ImageShow"));
-        label_6 = new QLabel(tab_cam);
-        label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setStyleSheet(QStringLiteral("background-color: rgb(0, 0, 0);"));
+        label_RightUp = new QLabel(tab_cam);
+        label_RightUp->setObjectName(QStringLiteral("label_RightUp"));
+        label_RightUp->setStyleSheet(QStringLiteral("background-color: rgb(0, 0, 0);"));
 
-        Layout_ImageShow->addWidget(label_6, 1, 1, 1, 1);
+        Layout_ImageShow->addWidget(label_RightUp, 1, 1, 1, 1);
 
         label_7 = new QLabel(tab_cam);
         label_7->setObjectName(QStringLiteral("label_7"));
@@ -305,11 +302,11 @@ public:
 
         Layout_ImageShow->addWidget(label_7, 2, 0, 1, 1);
 
-        label_5 = new QLabel(tab_cam);
-        label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setStyleSheet(QStringLiteral("background-color: rgb(0, 0, 0);"));
+        label_LeftUp = new QLabel(tab_cam);
+        label_LeftUp->setObjectName(QStringLiteral("label_LeftUp"));
+        label_LeftUp->setStyleSheet(QStringLiteral("background-color: rgb(0, 0, 0);"));
 
-        Layout_ImageShow->addWidget(label_5, 1, 0, 1, 1);
+        Layout_ImageShow->addWidget(label_LeftUp, 1, 0, 1, 1);
 
         label_8 = new QLabel(tab_cam);
         label_8->setObjectName(QStringLiteral("label_8"));
@@ -329,19 +326,19 @@ public:
 
         Layout_ImageShow->addWidget(label_2, 0, 1, 1, 1);
 
-        label_4 = new QLabel(tab_cam);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setStyleSheet(QStringLiteral("background-color: rgb(0, 0, 0);"));
-        label_4->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+        label_RightDown = new QLabel(tab_cam);
+        label_RightDown->setObjectName(QStringLiteral("label_RightDown"));
+        label_RightDown->setStyleSheet(QStringLiteral("background-color: rgb(0, 0, 0);"));
+        label_RightDown->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
 
-        Layout_ImageShow->addWidget(label_4, 3, 1, 1, 1);
+        Layout_ImageShow->addWidget(label_RightDown, 3, 1, 1, 1);
 
-        label_3 = new QLabel(tab_cam);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setStyleSheet(QStringLiteral("background-color: rgb(0, 0, 0);"));
-        label_3->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+        label_LeftDown = new QLabel(tab_cam);
+        label_LeftDown->setObjectName(QStringLiteral("label_LeftDown"));
+        label_LeftDown->setStyleSheet(QStringLiteral("background-color: rgb(0, 0, 0);"));
+        label_LeftDown->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
 
-        Layout_ImageShow->addWidget(label_3, 3, 0, 1, 1);
+        Layout_ImageShow->addWidget(label_LeftDown, 3, 0, 1, 1);
 
         Layout_ImageShow->setRowStretch(0, 1);
         Layout_ImageShow->setRowStretch(1, 10);
@@ -350,8 +347,8 @@ public:
 
         verticalLayout_5->addLayout(Layout_ImageShow);
 
-        verticalLayout_5->setStretch(0, 2);
-        verticalLayout_5->setStretch(1, 4);
+        verticalLayout_5->setStretch(0, 1);
+        verticalLayout_5->setStretch(1, 5);
         verticalLayout_5->setStretch(2, 25);
         tabWidget->addTab(tab_cam, QString());
         tab_measure = new QWidget();
@@ -483,27 +480,14 @@ public:
         ___qtreewidgetitem->setText(2, QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272MAC", 0));
         ___qtreewidgetitem->setText(1, QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272ID", 0));
         ___qtreewidgetitem->setText(0, QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272\345\236\213\345\217\267", 0));
-
-        const bool __sortingEnabled = treeWidget->isSortingEnabled();
-        treeWidget->setSortingEnabled(false);
-        QTreeWidgetItem *___qtreewidgetitem1 = treeWidget->topLevelItem(0);
-        ___qtreewidgetitem1->setText(0, QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272\345\236\213\345\217\267", 0));
-        QTreeWidgetItem *___qtreewidgetitem2 = treeWidget->topLevelItem(1);
-        ___qtreewidgetitem2->setText(0, QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272\345\236\213\345\217\267", 0));
-        QTreeWidgetItem *___qtreewidgetitem3 = treeWidget->topLevelItem(2);
-        ___qtreewidgetitem3->setText(0, QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272\345\236\213\345\217\267", 0));
-        QTreeWidgetItem *___qtreewidgetitem4 = treeWidget->topLevelItem(3);
-        ___qtreewidgetitem4->setText(0, QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272\345\236\213\345\217\267", 0));
-        treeWidget->setSortingEnabled(__sortingEnabled);
-
-        label_6->setText(QString());
+        label_RightUp->setText(QString());
         label_7->setText(QApplication::translate("BilletMeasurementClass", "Cam3", 0));
-        label_5->setText(QString());
+        label_LeftUp->setText(QString());
         label_8->setText(QApplication::translate("BilletMeasurementClass", "Cam4", 0));
         label->setText(QApplication::translate("BilletMeasurementClass", "Cam1", 0));
         label_2->setText(QApplication::translate("BilletMeasurementClass", "Cam2", 0));
-        label_4->setText(QString());
-        label_3->setText(QString());
+        label_RightDown->setText(QString());
+        label_LeftDown->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(tab_cam), QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272\351\207\207\351\233\206", 0));
         label_17->setText(QApplication::translate("BilletMeasurementClass", "\347\256\227\346\263\225\347\232\204\350\277\220\350\241\214\347\212\266\346\200\201\357\274\214\346\214\211\351\222\256\347\255\211", 0));
         label_13->setText(QApplication::translate("BilletMeasurementClass", "\345\256\236\346\227\266\346\201\242\345\244\215\345\207\272\347\232\204\350\275\256\345\273\223\357\274\210pcl\345\261\225\347\244\272\357\274\211\345\271\266\344\277\235\345\255\230", 0));
