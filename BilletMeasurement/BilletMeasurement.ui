@@ -41,7 +41,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_cam">
        <attribute name="title">
@@ -51,7 +51,7 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <widget class="QToolButton" name="toolButton_8">
+           <widget class="QToolButton" name="toolButton_Connect">
             <property name="focusPolicy">
              <enum>Qt::TabFocus</enum>
             </property>
@@ -87,7 +87,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QToolButton" name="toolButton_9">
+           <widget class="QToolButton" name="toolButton_Disconnect">
             <property name="text">
              <string>断开相机</string>
             </property>
@@ -120,7 +120,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QToolButton" name="toolButton_10">
+           <widget class="QToolButton" name="toolButton_Start">
             <property name="cursor">
              <cursorShape>ArrowCursor</cursorShape>
             </property>
@@ -162,7 +162,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QToolButton" name="toolButton_11">
+           <widget class="QToolButton" name="toolButton_Pause">
             <property name="text">
              <string>停止采集</string>
             </property>
@@ -195,7 +195,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QToolButton" name="toolButton_12">
+           <widget class="QToolButton" name="toolButton_SetCamPara">
             <property name="text">
              <string>设置相机参数</string>
             </property>
@@ -228,7 +228,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QToolButton" name="toolButton_13">
+           <widget class="QToolButton" name="toolButton_OpenSync">
             <property name="acceptDrops">
              <bool>false</bool>
             </property>
@@ -264,7 +264,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QToolButton" name="toolButton_14">
+           <widget class="QToolButton" name="toolButton_CloseSync">
             <property name="text">
              <string>关闭同步采集</string>
             </property>
@@ -297,7 +297,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QToolButton" name="toolButton_15">
+           <widget class="QToolButton" name="toolButton_SetSync">
             <property name="text">
              <string>设置触发参数</string>
             </property>
