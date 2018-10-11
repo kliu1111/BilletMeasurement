@@ -39,6 +39,11 @@ public:
 		unsigned int LeftUpImageHeight;
 		unsigned int LeftUpImageWidth;
 		unsigned int LeftUpImageFrequency;
+
+		unsigned int RightUpExposureTime;
+		unsigned int RightUpImageHeight;
+		unsigned int RightUpImageWidth;
+		unsigned int RightUpImageFrequency;
 		CamPara()
 		{
 

@@ -106,6 +106,11 @@ void BilletMeasurement::TreeWidgetCloseEditor()
 
 void BilletMeasurement::GetUserData()
 {
+	if (cam.IsGrabbing())
+	{
+		QMessageBox::about(NULL, QStringLiteral("提示"), QStringLiteral("请关闭相机采集后在进行相机参数的设置！！！"));
+		return;
+	}
 	if (WidgetItem != NULL)
 	{
 		BaslerCamera::CamPara CameraPara;
@@ -114,6 +119,11 @@ void BilletMeasurement::GetUserData()
 		CameraPara.LeftUpExposureTime = ui.treeWidget->topLevelItem(0)->text(6).toInt();
 		CameraPara.LeftUpImageWidth = ui.treeWidget->topLevelItem(0)->text(7).toInt();
 		CameraPara.LeftUpImageHeight = ui.treeWidget->topLevelItem(0)->text(8).toInt();
+
+		CameraPara.RightUpImageFrequency = ui.treeWidget->topLevelItem(1)->text(5).toInt();
+		CameraPara.RightUpExposureTime = ui.treeWidget->topLevelItem(1)->text(6).toInt();
+		CameraPara.RightUpImageWidth = ui.treeWidget->topLevelItem(1)->text(7).toInt();
+		CameraPara.RightUpImageHeight = ui.treeWidget->topLevelItem(1)->text(8).toInt();
 		//emit aaa();
 		cam.SetCamPara(CameraPara);
 	}

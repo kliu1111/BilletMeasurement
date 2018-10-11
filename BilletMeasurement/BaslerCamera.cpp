@@ -409,6 +409,11 @@ void BaslerCamera::SetCamPara(CamPara &Para)
 		CamList[0].ExposureTimeAbs.SetValue(Para.LeftUpExposureTime);
 		CamList[0].Width.SetValue(Para.LeftUpImageWidth);
 		CamList[0].Height.SetValue(Para.LeftUpImageHeight);
+
+		CamList[1].AcquisitionFrameRateAbs.SetValue(Para.RightUpImageFrequency);
+		CamList[1].ExposureTimeAbs.SetValue(Para.RightUpExposureTime);
+		CamList[1].Width.SetValue(Para.RightUpImageWidth);
+		CamList[1].Height.SetValue(Para.RightUpImageHeight);
 	}
 	catch (const GenericException &e)
 	{
