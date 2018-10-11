@@ -18,10 +18,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenu>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QToolButton>
 #include <QtWidgets/QTreeWidget>
@@ -84,17 +81,13 @@ public:
     QLabel *label_9;
     QLabel *label_15;
     QLabel *label_16;
-    QMenuBar *menuBar;
-    QMenu *menu;
-    QMenu *menu_2;
-    QStatusBar *statusBar;
 
     void setupUi(QMainWindow *BilletMeasurementClass)
     {
         if (BilletMeasurementClass->objectName().isEmpty())
             BilletMeasurementClass->setObjectName(QStringLiteral("BilletMeasurementClass"));
         BilletMeasurementClass->setEnabled(true);
-        BilletMeasurementClass->resize(936, 774);
+        BilletMeasurementClass->resize(956, 810);
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -139,7 +132,7 @@ public:
         sizePolicy.setHeightForWidth(centralWidget->sizePolicy().hasHeightForWidth());
         centralWidget->setSizePolicy(sizePolicy);
         verticalLayout_4 = new QVBoxLayout(centralWidget);
-        verticalLayout_4->setSpacing(6);
+        verticalLayout_4->setSpacing(0);
         verticalLayout_4->setContentsMargins(11, 11, 11, 11);
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
         tabWidget = new QTabWidget(centralWidget);
@@ -147,7 +140,7 @@ public:
         tab_cam = new QWidget();
         tab_cam->setObjectName(QStringLiteral("tab_cam"));
         verticalLayout_5 = new QVBoxLayout(tab_cam);
-        verticalLayout_5->setSpacing(6);
+        verticalLayout_5->setSpacing(1);
         verticalLayout_5->setContentsMargins(11, 11, 11, 11);
         verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
         horizontalLayout = new QHBoxLayout();
@@ -158,7 +151,10 @@ public:
         toolButton_Connect->setFocusPolicy(Qt::TabFocus);
         toolButton_Connect->setIcon(icon);
         toolButton_Connect->setIconSize(QSize(24, 24));
+        toolButton_Connect->setPopupMode(QToolButton::DelayedPopup);
         toolButton_Connect->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+        toolButton_Connect->setAutoRaise(true);
+        toolButton_Connect->setArrowType(Qt::NoArrow);
 
         horizontalLayout->addWidget(toolButton_Connect);
 
@@ -171,6 +167,7 @@ public:
         toolButton_Disconnect->setIcon(icon1);
         toolButton_Disconnect->setIconSize(QSize(24, 24));
         toolButton_Disconnect->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+        toolButton_Disconnect->setAutoRaise(true);
 
         horizontalLayout->addWidget(toolButton_Disconnect);
 
@@ -186,6 +183,7 @@ public:
         toolButton_Start->setIcon(icon2);
         toolButton_Start->setIconSize(QSize(24, 24));
         toolButton_Start->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+        toolButton_Start->setAutoRaise(true);
 
         horizontalLayout->addWidget(toolButton_Start);
 
@@ -198,6 +196,7 @@ public:
         toolButton_Pause->setIcon(icon3);
         toolButton_Pause->setIconSize(QSize(24, 24));
         toolButton_Pause->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+        toolButton_Pause->setAutoRaise(true);
 
         horizontalLayout->addWidget(toolButton_Pause);
 
@@ -212,6 +211,7 @@ public:
         toolButton_SetCamPara->setIcon(icon6);
         toolButton_SetCamPara->setIconSize(QSize(24, 24));
         toolButton_SetCamPara->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+        toolButton_SetCamPara->setAutoRaise(true);
 
         horizontalLayout->addWidget(toolButton_SetCamPara);
 
@@ -227,6 +227,7 @@ public:
         toolButton_OpenSync->setIcon(icon7);
         toolButton_OpenSync->setIconSize(QSize(24, 24));
         toolButton_OpenSync->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+        toolButton_OpenSync->setAutoRaise(true);
 
         horizontalLayout->addWidget(toolButton_OpenSync);
 
@@ -241,6 +242,7 @@ public:
         toolButton_CloseSync->setIcon(icon8);
         toolButton_CloseSync->setIconSize(QSize(24, 24));
         toolButton_CloseSync->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+        toolButton_CloseSync->setAutoRaise(true);
 
         horizontalLayout->addWidget(toolButton_CloseSync);
 
@@ -255,6 +257,7 @@ public:
         toolButton_SetSync->setIcon(icon9);
         toolButton_SetSync->setIconSize(QSize(24, 24));
         toolButton_SetSync->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+        toolButton_SetSync->setAutoRaise(true);
         toolButton_SetSync->setArrowType(Qt::NoArrow);
 
         horizontalLayout->addWidget(toolButton_SetSync);
@@ -305,6 +308,7 @@ public:
         label_LeftUp = new QLabel(tab_cam);
         label_LeftUp->setObjectName(QStringLiteral("label_LeftUp"));
         label_LeftUp->setStyleSheet(QStringLiteral("background-color: rgb(0, 0, 0);"));
+        label_LeftUp->setTextFormat(Qt::AutoText);
 
         Layout_ImageShow->addWidget(label_LeftUp, 1, 0, 1, 1);
 
@@ -341,9 +345,9 @@ public:
         Layout_ImageShow->addWidget(label_LeftDown, 3, 0, 1, 1);
 
         Layout_ImageShow->setRowStretch(0, 1);
-        Layout_ImageShow->setRowStretch(1, 10);
+        Layout_ImageShow->setRowStretch(1, 20);
         Layout_ImageShow->setRowStretch(2, 1);
-        Layout_ImageShow->setRowStretch(3, 10);
+        Layout_ImageShow->setRowStretch(3, 20);
 
         verticalLayout_5->addLayout(Layout_ImageShow);
 
@@ -429,21 +433,6 @@ public:
         verticalLayout_4->addWidget(tabWidget);
 
         BilletMeasurementClass->setCentralWidget(centralWidget);
-        menuBar = new QMenuBar(BilletMeasurementClass);
-        menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 936, 17));
-        menu = new QMenu(menuBar);
-        menu->setObjectName(QStringLiteral("menu"));
-        menu_2 = new QMenu(menuBar);
-        menu_2->setObjectName(QStringLiteral("menu_2"));
-        BilletMeasurementClass->setMenuBar(menuBar);
-        statusBar = new QStatusBar(BilletMeasurementClass);
-        statusBar->setObjectName(QStringLiteral("statusBar"));
-        BilletMeasurementClass->setStatusBar(statusBar);
-
-        menuBar->addAction(menu->menuAction());
-        menuBar->addAction(menu_2->menuAction());
-        menu->addSeparator();
 
         retranslateUi(BilletMeasurementClass);
 
@@ -499,8 +488,6 @@ public:
         label_15->setText(QApplication::translate("BilletMeasurementClass", "\344\271\213\345\211\215\347\232\204\350\275\256\345\273\223\347\232\204\346\225\260\346\215\256", 0));
         label_16->setText(QApplication::translate("BilletMeasurementClass", "TextLabel", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_measure), QApplication::translate("BilletMeasurementClass", "\350\275\256\345\273\223\346\265\213\351\207\217", 0));
-        menu->setTitle(QApplication::translate("BilletMeasurementClass", "\346\226\207\344\273\266", 0));
-        menu_2->setTitle(QApplication::translate("BilletMeasurementClass", "\347\274\226\350\276\221", 0));
     } // retranslateUi
 
 };

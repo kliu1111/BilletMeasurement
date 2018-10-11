@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>936</width>
-    <height>774</height>
+    <width>956</width>
+    <height>810</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -38,6 +38,9 @@
     </sizepolicy>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_4">
+    <property name="spacing">
+     <number>0</number>
+    </property>
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
@@ -48,6 +51,9 @@
         <string>相机采集</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_5" stretch="1,5,25">
+        <property name="spacing">
+         <number>1</number>
+        </property>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
@@ -68,8 +74,17 @@
               <height>24</height>
              </size>
             </property>
+            <property name="popupMode">
+             <enum>QToolButton::DelayedPopup</enum>
+            </property>
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonTextUnderIcon</enum>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
+            <property name="arrowType">
+             <enum>Qt::NoArrow</enum>
             </property>
            </widget>
           </item>
@@ -103,6 +118,9 @@
             </property>
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonTextUnderIcon</enum>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -146,6 +164,9 @@
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonTextUnderIcon</enum>
             </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
            </widget>
           </item>
           <item>
@@ -179,6 +200,9 @@
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonTextUnderIcon</enum>
             </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
            </widget>
           </item>
           <item>
@@ -211,6 +235,9 @@
             </property>
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonTextUnderIcon</enum>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -248,6 +275,9 @@
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonTextUnderIcon</enum>
             </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
            </widget>
           </item>
           <item>
@@ -281,6 +311,9 @@
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonTextUnderIcon</enum>
             </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
            </widget>
           </item>
           <item>
@@ -313,6 +346,9 @@
             </property>
             <property name="toolButtonStyle">
              <enum>Qt::ToolButtonTextUnderIcon</enum>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
             </property>
             <property name="arrowType">
              <enum>Qt::NoArrow</enum>
@@ -405,7 +441,7 @@
          </layout>
         </item>
         <item>
-         <layout class="QGridLayout" name="Layout_ImageShow" rowstretch="1,10,1,10" columnstretch="0,0">
+         <layout class="QGridLayout" name="Layout_ImageShow" rowstretch="1,20,1,20" columnstretch="0,0">
           <item row="1" column="1">
            <widget class="QLabel" name="label_RightUp">
             <property name="styleSheet">
@@ -433,6 +469,9 @@
             </property>
             <property name="text">
              <string/>
+            </property>
+            <property name="textFormat">
+             <enum>Qt::AutoText</enum>
             </property>
            </widget>
           </item>
@@ -590,30 +629,6 @@
     </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>936</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menu">
-    <property name="title">
-     <string>文件</string>
-    </property>
-    <addaction name="separator"/>
-   </widget>
-   <widget class="QMenu" name="menu_2">
-    <property name="title">
-     <string>编辑</string>
-    </property>
-   </widget>
-   <addaction name="menu"/>
-   <addaction name="menu_2"/>
-  </widget>
-  <widget class="QStatusBar" name="statusBar"/>
   <action name="action_connect">
    <property name="icon">
     <iconset resource="BilletMeasurement.qrc">

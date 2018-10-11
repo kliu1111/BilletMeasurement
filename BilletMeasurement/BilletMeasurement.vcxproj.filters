@@ -64,13 +64,13 @@
     <CustomBuild Include="BilletMeasurement.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="BaslerCamera.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_BilletMeasurement.h">
       <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BaslerCamera.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

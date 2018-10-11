@@ -149,7 +149,7 @@ void BaslerCamera::Connect()
 		{
 			QMessageBox::critical(NULL, QStringLiteral("提示"), QStringLiteral("未检测到相机,请检查硬件连接！！！"),
 				QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
-			return;;
+			return;
 		}
 
 		//打开所有已检测到的相机设备
@@ -276,9 +276,9 @@ void BaslerCamera::GrabThreadFunction()
 					QImage RightImg = QImage((unsigned char *)(RightUpptrGrabResult->GetBuffer()), RightUpptrGrabResult->GetWidth(), RightUpptrGrabResult->GetHeight(), QImage::Format_Indexed8);
 
 					LeftUpLabelAdd->setPixmap(QPixmap::fromImage(LeftImg).scaled(LeftUpLabelAdd->size(), Qt::KeepAspectRatioByExpanding));
-					LeftUpLabelAdd->show();
+					//LeftUpLabelAdd->show();
 					RightUpLabelAdd->setPixmap(QPixmap::fromImage(RightImg).scaled(RightUpLabelAdd->size(), Qt::KeepAspectRatioByExpanding));
-					LeftUpLabelAdd->show();
+					//LeftUpLabelAdd->show();
 					QCoreApplication::processEvents();
 					//LeftLabelAdd->repaint();
 					//RightLabelAdd->repaint();
@@ -325,10 +325,26 @@ void BaslerCamera::StopGrabbing()
 
 void BaslerCamera::GetCamInitPara()
 {
+	//-----数组
+	//int CamNumber = CamList.GetSize();
+	//for (int i = 0; i < CamNumber;i++)
+	//{
+	//	QString aa = CamList[i].GetDeviceInfo().GetFriendlyName();
+	//	CamInfoList[i] = new QTreeWidgetItem(CamInfo, QStringList(QStringLiteral("相机型号")));
+	//	CamInfoList[i]->setText(1, QString(CamList[i].GetDeviceInfo().GetUserDefinedName()));//ID
+	//	CamInfoList[i]->setText(2, QString::fromStdString(DecimalToMac(CamList[i].GevMACAddress.GetValue())));
+	//	CamInfoList[i]->setText(3, QString::fromStdString(BinaryToIp(DecimalToBinary(CamList[i].GevCurrentIPAddress.GetValue()))));
+	//	CamInfoList[i]->setText(4, QStringLiteral("已连接"));
+	//	CamInfoList[i]->setText(5, QString::number(CamList[i].AcquisitionFrameRateAbs.GetValue()));
+	//	CamInfoList[i]->setText(6, QString::number(CamList[i].ExposureTimeAbs.GetValue()));
+	//	CamInfoList[i]->setText(7, QString::number(CamList[i].Height.GetValue()));
+	//	CamInfoList[i]->setText(8, QString::number(CamList[i].Width.GetValue()));
+	//}
+
 	//------Cam1
-	QTreeWidgetItem *Cam1Info = new QTreeWidgetItem(CamInfo, QStringList(QStringLiteral("相机型号")));
 	if (CamList[0].IsOpen())
 	{
+		Cam1Info = new QTreeWidgetItem(CamInfo, QStringList(QString(CamList[0].GetDeviceInfo().GetModelName())));
 		Cam1Info->setText(1, QString(CamList[0].GetDeviceInfo().GetUserDefinedName()));//ID
 		Cam1Info->setText(2, QString::fromStdString(DecimalToMac(CamList[0].GevMACAddress.GetValue())));
 		Cam1Info->setText(3, QString::fromStdString(BinaryToIp(DecimalToBinary(CamList[0].GevCurrentIPAddress.GetValue()))));
@@ -338,15 +354,10 @@ void BaslerCamera::GetCamInitPara()
 		Cam1Info->setText(7, QString::number(CamList[0].Height.GetValue()));
 		Cam1Info->setText(8, QString::number(CamList[0].Width.GetValue()));
 	} 
-	else
-	{
-		Cam1Info->setText(4, QStringLiteral("未连接"));
-	}
 	//------Cam2
-	QTreeWidgetItem *Cam2Info = new QTreeWidgetItem(CamInfo, QStringList(QStringLiteral("相机型号")));
-
 	if (CamList[1].IsOpen())
 	{
+		Cam2Info = new QTreeWidgetItem(CamInfo, QStringList(QString(CamList[1].GetDeviceInfo().GetModelName())));
 		Cam2Info->setText(1, QString(CamList[1].GetDeviceInfo().GetUserDefinedName()));//ID
 		Cam2Info->setText(2, QString::fromStdString(DecimalToMac(CamList[1].GevMACAddress.GetValue())));
 		Cam2Info->setText(3, QString::fromStdString(BinaryToIp(DecimalToBinary(CamList[1].GevCurrentIPAddress.GetValue()))));
@@ -356,15 +367,11 @@ void BaslerCamera::GetCamInitPara()
 		Cam2Info->setText(7, QString::number(CamList[1].Height.GetValue()));
 		Cam2Info->setText(8, QString::number(CamList[1].Width.GetValue()));
 	}
-	else
-	{
-		Cam2Info->setText(4, QStringLiteral("未连接"));
-	}
 
 	////------Cam3
-	//QTreeWidgetItem *Cam3Info = new QTreeWidgetItem(CamInfo, QStringList(QStringLiteral("相机型号")));
 	//if (CamList[2].IsOpen())
 	//{
+	//	Cam3Info = new QTreeWidgetItem(CamInfo, QStringList(QString(CamList[2].GetDeviceInfo().GetModelName())));
 	//	Cam3Info->setText(1, QString(CamList[2].GetDeviceInfo().GetUserDefinedName()));//ID
 	//	Cam3Info->setText(2, QString::fromStdString(DecimalToMac(CamList[2].GevMACAddress.GetValue())));
 	//	Cam3Info->setText(3, QString::fromStdString(BinaryToIp(DecimalToBinary(CamList[2].GevCurrentIPAddress.GetValue()))));
@@ -374,30 +381,41 @@ void BaslerCamera::GetCamInitPara()
 	//	Cam3Info->setText(7, QString::number(CamList[2].Height.GetValue()));
 	//	Cam3Info->setText(8, QString::number(CamList[2].Width.GetValue()));
 	//}
-	//else
-	//{
-	//	Cam3Info->setText(4, QStringLiteral("未连接"));
-	//}
 
 	////------Cam4
-	//QTreeWidgetItem *Cam4Info = new QTreeWidgetItem(CamInfo, QStringList(QStringLiteral("相机型号")));
-	//Cam4Info->setText(1, QString(CamList[3].GetDeviceInfo().GetUserDefinedName()));//ID
-	//Cam4Info->setText(2, QString::fromStdString(DecimalToMac(CamList[3].GevMACAddress.GetValue())));
-	//Cam4Info->setText(3, QString::fromStdString(BinaryToIp(DecimalToBinary(CamList[3].GevCurrentIPAddress.GetValue()))));
 	//if (CamList[3].IsOpen())
 	//{
-	//	Cam4Info->setText(4,  QStringLiteral("已连接"));
+		//Cam4Info = new QTreeWidgetItem(CamInfo, QStringList(QString(CamList[3].GetDeviceInfo().GetModelName())));
+		//Cam4Info->setText(1, QString(CamList[3].GetDeviceInfo().GetUserDefinedName()));//ID
+		//Cam4Info->setText(2, QString::fromStdString(DecimalToMac(CamList[3].GevMACAddress.GetValue())));
+		//Cam4Info->setText(3, QString::fromStdString(BinaryToIp(DecimalToBinary(CamList[3].GevCurrentIPAddress.GetValue()))));
+		//Cam4Info->setText(4,  QStringLiteral("已连接"));
+		//Cam4Info->setText(5, QString::number(CamList[3].AcquisitionFrameRateAbs.GetValue()));
+		//Cam4Info->setText(6, QString::number(CamList[3].ExposureTimeAbs.GetValue()));
+		//Cam4Info->setText(7, QString::number(CamList[3].Height.GetValue()));
+		//Cam4Info->setText(8, QString::number(CamList[3].Width.GetValue()));
 	//}
-	//else
-	//{
-	//	Cam4Info->setText(4, QStringLiteral("未连接"));
-	//}
-	//Cam4Info->setText(5, QString::number(CamList[3].AcquisitionFrameRateAbs.GetValue()));
-	//Cam4Info->setText(6, QString::number(CamList[3].ExposureTimeAbs.GetValue()));
-	//Cam4Info->setText(7, QString::number(CamList[3].Height.GetValue()));
-	//Cam4Info->setText(8, QString::number(CamList[3].Width.GetValue()));
 
 
+}
+
+void BaslerCamera::SetCamPara(CamPara &Para)
+{
+	try
+	{
+		//CamList[0].GevPersistentIPAddress.SetValue(Para.LeftUpCamIp.toInt());
+		//int aa = Para.LeftUpImageFrequency;
+		CamList[0].AcquisitionFrameRateAbs.SetValue(Para.LeftUpImageFrequency);
+		CamList[0].ExposureTimeAbs.SetValue(Para.LeftUpExposureTime);
+		CamList[0].Width.SetValue(Para.LeftUpImageWidth);
+		CamList[0].Height.SetValue(Para.LeftUpImageHeight);
+	}
+	catch (const GenericException &e)
+	{
+		// Error handling
+		cerr << "An exception occurred." << endl
+			<< e.GetDescription() << endl;
+	}
 }
 
 void BaslerCamera::GetLeftUpLabelAddress(QLabel &LeftUpLabelPointer)

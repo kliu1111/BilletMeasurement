@@ -1,4 +1,6 @@
 #pragma once
+#include <QObject>
+#include <QMetaType>
 #include <QString>
 #include <QLabel>
 #include <QLineEdit>
@@ -10,18 +12,47 @@
 #include <pylon/ImageFormatConverter.h>
 #include <pylon/gige/BaslerGigEInstantCameraArray.h>
 #include <thread>
+#include <vector>
 
 using namespace std;
 using namespace Pylon;
 
-class BaslerCamera
+//struct CamPara
+//{
+//	//QString LeftUpCamIp;
+//	unsigned int LeftUpExposureTime;
+//	unsigned int LeftUpImageHeight;
+//	unsigned int LeftUpImageWidth;
+//	unsigned int LeftUpImageFrequency;
+//};
+
+//Q_DECLARE_OPAQUE_POINTER(CamPara);
+
+class BaslerCamera 
 {
+public:
+
+	class CamPara
+	{
+	public:
+		unsigned int LeftUpExposureTime;
+		unsigned int LeftUpImageHeight;
+		unsigned int LeftUpImageWidth;
+		unsigned int LeftUpImageFrequency;
+		CamPara()
+		{
+
+		}
+	};
+
 public:
 	BaslerCamera();
 	~BaslerCamera();
 
 	//相机数组
 	CBaslerGigEInstantCameraArray CamList;
+	//BaslerCamera *cam;
+	//CamPara *para;
 
 	//连接检测到的所有的相机
 	void Connect();
@@ -47,6 +78,9 @@ public:
 	//取得相机的初始参数
 	void GetCamInitPara();
 
+	//设置相机参数
+	void SetCamPara(CamPara &Para);
+
 	//采集线程
 	static void GrabThread(BaslerCamera* pClass);
 	void GrabThreadFunction();
@@ -60,20 +94,23 @@ public:
 	void GetRightUpLabelAddress(QLabel &RightUpLabelPointer);
 	void GetLeftDownLabelAddress(QLabel &LeftDownLabelPointer);
 	void GetRightDownLabelAddress(QLabel &RightDownLabelPointer);
-	//QLineEdit* LeftUpCamIp;
-	//QLineEdit* RightUpCamIp;
-	//QLineEdit* LeftDownCamIp;
-	//QLineEdit* RightDownCamIp;
-	//void GetLeftUpIpAddress(QLineEdit &LeftUpIpPointer);
-	//void GetRightUpIpAddress(QLineEdit &RightUpIpPointer);
-	//void GetLeftDownIpAddress(QLineEdit &LeftDownIpPointer);
-	//void GetRightDownIpAddress(QLineEdit &RightDownIpPointer);
+	//treewidget地址
 	QTreeWidget* CamInfo;
 	void GetCamInfoListAddress(QTreeWidget &CamInfoListPointer);
+	//vector<QTreeWidgetItem*> CamInfoList;
+
 
 private:
 	CGrabResultPtr LeftUpptrGrabResult;
 	CGrabResultPtr RightUpptrGrabResult;
+	CGrabResultPtr LeftDownptrGrabResult;
+	CGrabResultPtr RightDownptrGrabResult;
+	//vector<QTreeWidgetItem*> CamInfoList;
+	QTreeWidgetItem* CamInfoList[4];
+	QTreeWidgetItem *Cam1Info;
+	QTreeWidgetItem *Cam2Info;
+	QTreeWidgetItem *Cam3Info;
+	QTreeWidgetItem *Cam4Info;
 
 };
 

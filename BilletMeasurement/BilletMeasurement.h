@@ -3,6 +3,9 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_BilletMeasurement.h"
+#include <BaslerCamera.h>
+//class BaslerCamera;
+//class CamPara;
 
 class BilletMeasurement : public QMainWindow
 {
@@ -13,12 +16,17 @@ public:
 	~BilletMeasurement();
 
 private:
-	QTreeWidgetItem *m_myItem;
-	int m_myCol;
 	Ui::BilletMeasurementClass ui;
+	BaslerCamera cam;
+	
+
+	QTreeWidgetItem *WidgetItem;
+	int ItemCol;
 
 
-private slots:
+
+
+public slots :
 
 	//连接相机
 	void SlotCamConnect();
@@ -38,11 +46,19 @@ private slots:
 	//设置同步板参数-----弹出设置窗口
 	void SlotSetSync();
 
-	void treeWidgetOpenEditor(QTreeWidgetItem *item, int col);
+	void TreeWidgetOpenEditor(QTreeWidgetItem *item, int col);
 
-	void treeWidgetCloseEditor();
+	void TreeWidgetCloseEditor();
+
+	//void SetUserInputPara();
+
+	void GetUserData();
 
 	void InitSlot();
+
+signals:
+	void aaa();
+
 };
 
 #endif // BILLETMEASUREMENT_H
