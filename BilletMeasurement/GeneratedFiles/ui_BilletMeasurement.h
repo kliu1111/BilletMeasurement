@@ -49,8 +49,6 @@ public:
     QToolButton *toolButton_Start;
     QSpacerItem *horizontalSpacer_10;
     QToolButton *toolButton_Pause;
-    QSpacerItem *horizontalSpacer_11;
-    QToolButton *toolButton_SetCamPara;
     QSpacerItem *horizontalSpacer_12;
     QToolButton *toolButton_OpenSync;
     QSpacerItem *horizontalSpacer_13;
@@ -200,21 +198,6 @@ public:
 
         horizontalLayout->addWidget(toolButton_Pause);
 
-        horizontalSpacer_11 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_11);
-
-        toolButton_SetCamPara = new QToolButton(tab_cam);
-        toolButton_SetCamPara->setObjectName(QStringLiteral("toolButton_SetCamPara"));
-        QIcon icon6;
-        icon6.addFile(QStringLiteral(":/image/ico/Setting_32px.ico"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_SetCamPara->setIcon(icon6);
-        toolButton_SetCamPara->setIconSize(QSize(24, 24));
-        toolButton_SetCamPara->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
-        toolButton_SetCamPara->setAutoRaise(true);
-
-        horizontalLayout->addWidget(toolButton_SetCamPara);
-
         horizontalSpacer_12 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer_12);
@@ -222,9 +205,9 @@ public:
         toolButton_OpenSync = new QToolButton(tab_cam);
         toolButton_OpenSync->setObjectName(QStringLiteral("toolButton_OpenSync"));
         toolButton_OpenSync->setAcceptDrops(false);
-        QIcon icon7;
-        icon7.addFile(QString::fromUtf8(":/image/ico/\345\274\200\345\205\263 \345\274\200(1).png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_OpenSync->setIcon(icon7);
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/image/ico/\345\274\200\345\205\263 \345\274\200(1).png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_OpenSync->setIcon(icon6);
         toolButton_OpenSync->setIconSize(QSize(24, 24));
         toolButton_OpenSync->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
         toolButton_OpenSync->setAutoRaise(true);
@@ -237,9 +220,9 @@ public:
 
         toolButton_CloseSync = new QToolButton(tab_cam);
         toolButton_CloseSync->setObjectName(QStringLiteral("toolButton_CloseSync"));
-        QIcon icon8;
-        icon8.addFile(QString::fromUtf8(":/image/ico/\345\274\200\345\205\263 \345\205\263(1).png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_CloseSync->setIcon(icon8);
+        QIcon icon7;
+        icon7.addFile(QString::fromUtf8(":/image/ico/\345\274\200\345\205\263 \345\205\263(1).png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_CloseSync->setIcon(icon7);
         toolButton_CloseSync->setIconSize(QSize(24, 24));
         toolButton_CloseSync->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
         toolButton_CloseSync->setAutoRaise(true);
@@ -252,9 +235,9 @@ public:
 
         toolButton_SetSync = new QToolButton(tab_cam);
         toolButton_SetSync->setObjectName(QStringLiteral("toolButton_SetSync"));
-        QIcon icon9;
-        icon9.addFile(QString::fromUtf8(":/image/ico/\350\256\276\347\275\256\345\217\202\346\225\260.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_SetSync->setIcon(icon9);
+        QIcon icon8;
+        icon8.addFile(QString::fromUtf8(":/image/ico/\350\256\276\347\275\256\345\217\202\346\225\260.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_SetSync->setIcon(icon8);
         toolButton_SetSync->setIconSize(QSize(24, 24));
         toolButton_SetSync->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
         toolButton_SetSync->setAutoRaise(true);
@@ -455,7 +438,6 @@ public:
         toolButton_Disconnect->setText(QApplication::translate("BilletMeasurementClass", "\346\226\255\345\274\200\347\233\270\346\234\272", 0));
         toolButton_Start->setText(QApplication::translate("BilletMeasurementClass", "\345\274\200\345\247\213\351\207\207\351\233\206", 0));
         toolButton_Pause->setText(QApplication::translate("BilletMeasurementClass", "\345\201\234\346\255\242\351\207\207\351\233\206", 0));
-        toolButton_SetCamPara->setText(QApplication::translate("BilletMeasurementClass", "\350\256\276\347\275\256\347\233\270\346\234\272\345\217\202\346\225\260", 0));
         toolButton_OpenSync->setText(QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272\345\220\214\346\255\245\351\207\207\351\233\206", 0));
         toolButton_CloseSync->setText(QApplication::translate("BilletMeasurementClass", "\345\205\263\351\227\255\345\220\214\346\255\245\351\207\207\351\233\206", 0));
         toolButton_SetSync->setText(QApplication::translate("BilletMeasurementClass", "\350\256\276\347\275\256\350\247\246\345\217\221\345\217\202\346\225\260", 0));

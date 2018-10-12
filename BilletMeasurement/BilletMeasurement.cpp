@@ -38,7 +38,7 @@ BilletMeasurement::~BilletMeasurement()
 	cam.DetachDevice();
 	PylonTerminate();
 }
-//连接相机
+
 void BilletMeasurement::SlotCamConnect()
 {
 	cam.Connect();
@@ -60,7 +60,7 @@ void BilletMeasurement::SlotCamConnect()
 
 	}
 }
-//断开相机
+
 void BilletMeasurement::SlotCamDisconnect()
 {
 	cam.Disconnect();
@@ -71,21 +71,15 @@ void BilletMeasurement::SlotCamDisconnect()
 		ui.treeWidget->topLevelItem(i)->setText(4, QStringLiteral("已断开"));
 	}
 }
-//开始相机采集
+
 void BilletMeasurement::SlotStartGrab()
 {
 	cam.StartGrabbing();
 }
-//停止相机采集
+
 void BilletMeasurement::SlotPauseGrab()
 {
 	cam.StopGrabbing();
-}
-//设置相机参数-----弹出设置窗口
-void BilletMeasurement::SlotSetCamPara()
-{
-	//ui.treeWidget->setEditTriggers(QAbstractItemView::DoubleClicked);
-	cout << "55555555555" << endl;
 }
 
 void BilletMeasurement::TreeWidgetOpenEditor(QTreeWidgetItem *item, int col)
@@ -113,7 +107,6 @@ void BilletMeasurement::GetUserData()
 	}
 	if (WidgetItem != NULL)
 	{
-		BaslerCamera::CamPara CameraPara;
 		//para.LeftUpCamIp = ui.treeWidget->topLevelItem(0)->text(3);
 		CameraPara.LeftUpImageFrequency = ui.treeWidget->topLevelItem(0)->text(5).toInt();
 		CameraPara.LeftUpExposureTime = ui.treeWidget->topLevelItem(0)->text(6).toInt();
@@ -130,19 +123,33 @@ void BilletMeasurement::GetUserData()
 
 }
 
-//控制帧同步板进行相机同步采集
 void BilletMeasurement::SlotOpenSync()
 {
-	cout << "66666666666" << endl;
+	if (myCom == nullptr)
+	{
+		myCom = new QextSerialPort("COM4", QextSerialPort::Polling);
+		IsOpen = myCom->open(QIODevice::ReadWrite);
+	}
+	if (IsOpen)
+	{
+		myCom->write("EnableOutput 1\n");
+
+	}
 }
 
-//控制帧同步板关闭相机采集
 void BilletMeasurement::SlotCloseSync()
 {
-	cout << "7777777777777" << endl;
+	if (myCom == nullptr)
+	{
+		myCom = new QextSerialPort("COM4", QextSerialPort::Polling);
+		IsOpen = myCom->open(QIODevice::ReadWrite);
+	}
+	if (IsOpen)
+	{
+		myCom->write("EnableOutput 0\n");
+	}
 }
 
-//设置同步板参数-----弹出设置窗口
 void BilletMeasurement::SlotSetSync()
 {
 	cout << "8888888888888" << endl;
@@ -158,7 +165,7 @@ void BilletMeasurement::InitSlot()
 	connect(ui.toolButton_Disconnect, SIGNAL(clicked()), this, SLOT(SlotCamDisconnect()));
 	connect(ui.toolButton_Start, SIGNAL(clicked()), this, SLOT(SlotStartGrab()));
 	connect(ui.toolButton_Pause, SIGNAL(clicked()), this, SLOT(SlotPauseGrab()));
-	connect(ui.toolButton_SetCamPara, SIGNAL(clicked()), this, SLOT(SlotSetCamPara()));
+	//connect(ui.toolButton_SetCamPara, SIGNAL(clicked()), this, SLOT(SlotSetCamPara()));
 	connect(ui.toolButton_OpenSync, SIGNAL(clicked()), this, SLOT(SlotOpenSync()));
 	connect(ui.toolButton_CloseSync, SIGNAL(clicked()), this, SLOT(SlotCloseSync()));
 	connect(ui.toolButton_SetSync, SIGNAL(clicked()), this, SLOT(SlotSetSync()));

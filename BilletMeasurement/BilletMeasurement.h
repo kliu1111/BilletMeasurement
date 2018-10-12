@@ -4,6 +4,7 @@
 #include <QtWidgets/QMainWindow>
 #include "ui_BilletMeasurement.h"
 #include <BaslerCamera.h>
+#include "qextserialport/qextserialport.h"
 //class BaslerCamera;
 //class CamPara;
 
@@ -19,10 +20,12 @@ private:
 	Ui::BilletMeasurementClass ui;
 	BaslerCamera cam;
 	
-
+	BaslerCamera::CamPara CameraPara;
 	QTreeWidgetItem *WidgetItem;
 	int ItemCol;
 
+	QextSerialPort *myCom = nullptr;
+	bool IsOpen;
 
 
 
@@ -36,18 +39,15 @@ public slots :
 	void SlotStartGrab();
 	//停止相机采集
 	void SlotPauseGrab();
-	//设置相机参数-----弹出设置窗口
-	void SlotSetCamPara();
-
 	//控制帧同步板进行相机同步采集
 	void SlotOpenSync();
 	//控制帧同步板关闭相机采集
 	void SlotCloseSync();
 	//设置同步板参数-----弹出设置窗口
 	void SlotSetSync();
-
+	//双击控件时开启编辑状态
 	void TreeWidgetOpenEditor(QTreeWidgetItem *item, int col);
-
+	//控件变化时关闭编辑状态
 	void TreeWidgetCloseEditor();
 
 	//void SetUserInputPara();

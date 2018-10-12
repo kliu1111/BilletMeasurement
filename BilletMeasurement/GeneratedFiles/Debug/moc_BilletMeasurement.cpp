@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_BilletMeasurement_t {
-    QByteArrayData data[18];
-    char stringdata0[228];
+    QByteArrayData data[17];
+    char stringdata0[213];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,26 +36,25 @@ QT_MOC_LITERAL(3, 23, 14), // "SlotCamConnect"
 QT_MOC_LITERAL(4, 38, 17), // "SlotCamDisconnect"
 QT_MOC_LITERAL(5, 56, 13), // "SlotStartGrab"
 QT_MOC_LITERAL(6, 70, 13), // "SlotPauseGrab"
-QT_MOC_LITERAL(7, 84, 14), // "SlotSetCamPara"
-QT_MOC_LITERAL(8, 99, 12), // "SlotOpenSync"
-QT_MOC_LITERAL(9, 112, 13), // "SlotCloseSync"
-QT_MOC_LITERAL(10, 126, 11), // "SlotSetSync"
-QT_MOC_LITERAL(11, 138, 20), // "TreeWidgetOpenEditor"
-QT_MOC_LITERAL(12, 159, 16), // "QTreeWidgetItem*"
-QT_MOC_LITERAL(13, 176, 4), // "item"
-QT_MOC_LITERAL(14, 181, 3), // "col"
-QT_MOC_LITERAL(15, 185, 21), // "TreeWidgetCloseEditor"
-QT_MOC_LITERAL(16, 207, 11), // "GetUserData"
-QT_MOC_LITERAL(17, 219, 8) // "InitSlot"
+QT_MOC_LITERAL(7, 84, 12), // "SlotOpenSync"
+QT_MOC_LITERAL(8, 97, 13), // "SlotCloseSync"
+QT_MOC_LITERAL(9, 111, 11), // "SlotSetSync"
+QT_MOC_LITERAL(10, 123, 20), // "TreeWidgetOpenEditor"
+QT_MOC_LITERAL(11, 144, 16), // "QTreeWidgetItem*"
+QT_MOC_LITERAL(12, 161, 4), // "item"
+QT_MOC_LITERAL(13, 166, 3), // "col"
+QT_MOC_LITERAL(14, 170, 21), // "TreeWidgetCloseEditor"
+QT_MOC_LITERAL(15, 192, 11), // "GetUserData"
+QT_MOC_LITERAL(16, 204, 8) // "InitSlot"
 
     },
     "BilletMeasurement\0aaa\0\0SlotCamConnect\0"
     "SlotCamDisconnect\0SlotStartGrab\0"
-    "SlotPauseGrab\0SlotSetCamPara\0SlotOpenSync\0"
-    "SlotCloseSync\0SlotSetSync\0"
-    "TreeWidgetOpenEditor\0QTreeWidgetItem*\0"
-    "item\0col\0TreeWidgetCloseEditor\0"
-    "GetUserData\0InitSlot"
+    "SlotPauseGrab\0SlotOpenSync\0SlotCloseSync\0"
+    "SlotSetSync\0TreeWidgetOpenEditor\0"
+    "QTreeWidgetItem*\0item\0col\0"
+    "TreeWidgetCloseEditor\0GetUserData\0"
+    "InitSlot"
 };
 #undef QT_MOC_LITERAL
 
@@ -65,7 +64,7 @@ static const uint qt_meta_data_BilletMeasurement[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      13,   14, // methods
+      12,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -73,21 +72,20 @@ static const uint qt_meta_data_BilletMeasurement[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   79,    2, 0x06 /* Public */,
+       1,    0,   74,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   80,    2, 0x0a /* Public */,
-       4,    0,   81,    2, 0x0a /* Public */,
-       5,    0,   82,    2, 0x0a /* Public */,
-       6,    0,   83,    2, 0x0a /* Public */,
-       7,    0,   84,    2, 0x0a /* Public */,
-       8,    0,   85,    2, 0x0a /* Public */,
-       9,    0,   86,    2, 0x0a /* Public */,
-      10,    0,   87,    2, 0x0a /* Public */,
-      11,    2,   88,    2, 0x0a /* Public */,
-      15,    0,   93,    2, 0x0a /* Public */,
-      16,    0,   94,    2, 0x0a /* Public */,
-      17,    0,   95,    2, 0x0a /* Public */,
+       3,    0,   75,    2, 0x0a /* Public */,
+       4,    0,   76,    2, 0x0a /* Public */,
+       5,    0,   77,    2, 0x0a /* Public */,
+       6,    0,   78,    2, 0x0a /* Public */,
+       7,    0,   79,    2, 0x0a /* Public */,
+       8,    0,   80,    2, 0x0a /* Public */,
+       9,    0,   81,    2, 0x0a /* Public */,
+      10,    2,   82,    2, 0x0a /* Public */,
+      14,    0,   87,    2, 0x0a /* Public */,
+      15,    0,   88,    2, 0x0a /* Public */,
+      16,    0,   89,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -100,8 +98,7 @@ static const uint qt_meta_data_BilletMeasurement[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 12, QMetaType::Int,   13,   14,
+    QMetaType::Void, 0x80000000 | 11, QMetaType::Int,   12,   13,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -120,14 +117,13 @@ void BilletMeasurement::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         case 2: _t->SlotCamDisconnect(); break;
         case 3: _t->SlotStartGrab(); break;
         case 4: _t->SlotPauseGrab(); break;
-        case 5: _t->SlotSetCamPara(); break;
-        case 6: _t->SlotOpenSync(); break;
-        case 7: _t->SlotCloseSync(); break;
-        case 8: _t->SlotSetSync(); break;
-        case 9: _t->TreeWidgetOpenEditor((*reinterpret_cast< QTreeWidgetItem*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 10: _t->TreeWidgetCloseEditor(); break;
-        case 11: _t->GetUserData(); break;
-        case 12: _t->InitSlot(); break;
+        case 5: _t->SlotOpenSync(); break;
+        case 6: _t->SlotCloseSync(); break;
+        case 7: _t->SlotSetSync(); break;
+        case 8: _t->TreeWidgetOpenEditor((*reinterpret_cast< QTreeWidgetItem*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 9: _t->TreeWidgetCloseEditor(); break;
+        case 10: _t->GetUserData(); break;
+        case 11: _t->InitSlot(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -167,13 +163,13 @@ int BilletMeasurement::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 12;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 13)
+        if (_id < 12)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 13;
+        _id -= 12;
     }
     return _id;
 }
