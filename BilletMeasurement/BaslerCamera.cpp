@@ -281,11 +281,15 @@ void BaslerCamera::GrabThreadFunction()
 					Rpixmap = RightUpLabelAdd->pixmap();
 					if (Rpixmap && Lpixmap)
 					{
-						time = QDateTime::currentDateTime();
-						//str_time = time.toString("yyyy-MM-dd_hh-mm-ss");
-						str_time = time.toString("yyyy-MM-dd-hh-mm-ss-zzz");
-						Lpixmap->save(("image/L_image/") + str_time + ".jpg");
-						Rpixmap->save(("image/R_image/") + str_time + ".jpg");
+						//time = QDateTime::currentDateTime();
+						////str_time = time.toString("yyyy-MM-dd_hh-mm-ss");
+						//str_time = time.toString("yyyy-MM-dd-hh-mm-ss-zzz");
+						//Lpixmap->save(("image/L_image/") + str_time + ".jpg");
+						//Rpixmap->save(("image/R_image/") + str_time + ".jpg");
+						//CImagePersistence::Save(ImageFileFormat_Png, FileName, LeftUpptrGrabResult);
+						//CImagePersistence::Save(ImageFileFormat_Tiff, aa, LeftUpptrGrabResult);
+						CImagePersistence::Save(ImageFileFormat_Tiff, "image/aaa.jpg", RightUpptrGrabResult);
+						
 					}
 
 					QCoreApplication::processEvents();
@@ -403,22 +407,33 @@ void BaslerCamera::GetCamInitPara()
 
 
 }
+void BaslerCamera::SetIniCamParam(CameraPara inipara)
+{
+	CamList[0].AcquisitionFrameRateAbs.SetValue(inipara.LeftImageFrequency);
+	CamList[0].ExposureTimeAbs.SetValue(inipara.LeftExposureTime);
+	CamList[0].Width.SetValue(inipara.LeftImageWidth);
+	CamList[0].Height.SetValue(inipara.LeftImageHeight);
 
-void BaslerCamera::SetCamPara(CamPara &Para)
+	CamList[1].AcquisitionFrameRateAbs.SetValue(inipara.RightImageFrequency);
+	CamList[1].ExposureTimeAbs.SetValue(inipara.RightExposureTime);
+	CamList[1].Width.SetValue(inipara.RightImageWidth);
+	CamList[1].Height.SetValue(inipara.RightImageHeight);
+}
+void BaslerCamera::SetCamPara(CameraPara Para)
 {
 	try
 	{
 		//CamList[0].GevPersistentIPAddress.SetValue(Para.LeftUpCamIp.toInt());
 		//int aa = Para.LeftUpImageFrequency;
-		CamList[0].AcquisitionFrameRateAbs.SetValue(Para.LeftUpImageFrequency);
-		CamList[0].ExposureTimeAbs.SetValue(Para.LeftUpExposureTime);
-		CamList[0].Width.SetValue(Para.LeftUpImageWidth);
-		CamList[0].Height.SetValue(Para.LeftUpImageHeight);
+		CamList[0].AcquisitionFrameRateAbs.SetValue(Para.LeftImageFrequency);
+		CamList[0].ExposureTimeAbs.SetValue(Para.LeftExposureTime);
+		CamList[0].Width.SetValue(Para.LeftImageWidth);
+		CamList[0].Height.SetValue(Para.LeftImageHeight);
 
-		CamList[1].AcquisitionFrameRateAbs.SetValue(Para.RightUpImageFrequency);
-		CamList[1].ExposureTimeAbs.SetValue(Para.RightUpExposureTime);
-		CamList[1].Width.SetValue(Para.RightUpImageWidth);
-		CamList[1].Height.SetValue(Para.RightUpImageHeight);
+		CamList[1].AcquisitionFrameRateAbs.SetValue(Para.RightImageFrequency);
+		CamList[1].ExposureTimeAbs.SetValue(Para.RightExposureTime);
+		CamList[1].Width.SetValue(Para.RightImageWidth);
+		CamList[1].Height.SetValue(Para.RightImageHeight);
 	}
 	catch (const GenericException &e)
 	{

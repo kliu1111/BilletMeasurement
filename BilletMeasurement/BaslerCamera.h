@@ -18,14 +18,18 @@
 using namespace std;
 using namespace Pylon;
 
-//struct CamPara
-//{
-//	//QString LeftUpCamIp;
-//	unsigned int LeftUpExposureTime;
-//	unsigned int LeftUpImageHeight;
-//	unsigned int LeftUpImageWidth;
-//	unsigned int LeftUpImageFrequency;
-//};
+struct CameraPara
+{
+	unsigned int LeftExposureTime;
+	unsigned int LeftImageHeight;
+	unsigned int LeftImageWidth;
+	unsigned int LeftImageFrequency;
+
+	unsigned int RightExposureTime;
+	unsigned int RightImageHeight;
+	unsigned int RightImageWidth;
+	unsigned int RightImageFrequency;
+};
 
 //Q_DECLARE_OPAQUE_POINTER(CamPara);
 
@@ -33,39 +37,19 @@ class BaslerCamera
 {
 public:
 
-	class CamPara
-	{
-	public:
-		unsigned int LeftUpExposureTime;
-		unsigned int LeftUpImageHeight;
-		unsigned int LeftUpImageWidth;
-		unsigned int LeftUpImageFrequency;
-
-		unsigned int RightUpExposureTime;
-		unsigned int RightUpImageHeight;
-		unsigned int RightUpImageWidth;
-		unsigned int RightUpImageFrequency;
-		CamPara()
-		{
-
-		}
-	};
-
 public:
 	BaslerCamera();
 	~BaslerCamera();
 
 	//相机数组
 	CBaslerGigEInstantCameraArray CamList;
-	//BaslerCamera *cam;
-	//CamPara *para;
 	QImage LeftImg;
 	QImage RightImg;
 	const QPixmap *Lpixmap;
 	const QPixmap *Rpixmap;
 	QString str_time;
 	QDateTime time;
-
+	void SetIniCamParam(CameraPara inipara);
 	//连接检测到的所有的相机
 	void Connect();
 
@@ -91,7 +75,7 @@ public:
 	void GetCamInitPara();
 
 	//设置相机参数
-	void SetCamPara(CamPara &Para);
+	void SetCamPara(CameraPara Para);
 
 	//采集线程
 	static void GrabThread(BaslerCamera* pClass);

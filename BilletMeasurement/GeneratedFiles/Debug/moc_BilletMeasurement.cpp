@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_BilletMeasurement_t {
-    QByteArrayData data[20];
-    char stringdata0[273];
+    QByteArrayData data[19];
+    char stringdata0[261];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -38,27 +38,26 @@ QT_MOC_LITERAL(5, 56, 13), // "SlotStartGrab"
 QT_MOC_LITERAL(6, 70, 13), // "SlotPauseGrab"
 QT_MOC_LITERAL(7, 84, 12), // "SlotOpenSync"
 QT_MOC_LITERAL(8, 97, 13), // "SlotCloseSync"
-QT_MOC_LITERAL(9, 111, 11), // "SlotSetSync"
-QT_MOC_LITERAL(10, 123, 20), // "TreeWidgetOpenEditor"
-QT_MOC_LITERAL(11, 144, 16), // "QTreeWidgetItem*"
-QT_MOC_LITERAL(12, 161, 4), // "item"
-QT_MOC_LITERAL(13, 166, 3), // "col"
-QT_MOC_LITERAL(14, 170, 21), // "TreeWidgetCloseEditor"
-QT_MOC_LITERAL(15, 192, 21), // "SlotSetExTriggerParam"
-QT_MOC_LITERAL(16, 214, 16), // "SlotTriggerBtnOk"
-QT_MOC_LITERAL(17, 231, 20), // "SlotTriggerBtnCancel"
-QT_MOC_LITERAL(18, 252, 11), // "GetUserData"
-QT_MOC_LITERAL(19, 264, 8) // "InitSlot"
+QT_MOC_LITERAL(9, 111, 20), // "TreeWidgetOpenEditor"
+QT_MOC_LITERAL(10, 132, 16), // "QTreeWidgetItem*"
+QT_MOC_LITERAL(11, 149, 4), // "item"
+QT_MOC_LITERAL(12, 154, 3), // "col"
+QT_MOC_LITERAL(13, 158, 21), // "TreeWidgetCloseEditor"
+QT_MOC_LITERAL(14, 180, 21), // "SlotSetExTriggerParam"
+QT_MOC_LITERAL(15, 202, 16), // "SlotTriggerBtnOk"
+QT_MOC_LITERAL(16, 219, 20), // "SlotTriggerBtnCancel"
+QT_MOC_LITERAL(17, 240, 11), // "GetUserData"
+QT_MOC_LITERAL(18, 252, 8) // "InitSlot"
 
     },
     "BilletMeasurement\0aaa\0\0SlotCamConnect\0"
     "SlotCamDisconnect\0SlotStartGrab\0"
     "SlotPauseGrab\0SlotOpenSync\0SlotCloseSync\0"
-    "SlotSetSync\0TreeWidgetOpenEditor\0"
-    "QTreeWidgetItem*\0item\0col\0"
-    "TreeWidgetCloseEditor\0SlotSetExTriggerParam\0"
-    "SlotTriggerBtnOk\0SlotTriggerBtnCancel\0"
-    "GetUserData\0InitSlot"
+    "TreeWidgetOpenEditor\0QTreeWidgetItem*\0"
+    "item\0col\0TreeWidgetCloseEditor\0"
+    "SlotSetExTriggerParam\0SlotTriggerBtnOk\0"
+    "SlotTriggerBtnCancel\0GetUserData\0"
+    "InitSlot"
 };
 #undef QT_MOC_LITERAL
 
@@ -68,7 +67,7 @@ static const uint qt_meta_data_BilletMeasurement[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      15,   14, // methods
+      14,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -76,23 +75,22 @@ static const uint qt_meta_data_BilletMeasurement[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   89,    2, 0x06 /* Public */,
+       1,    0,   84,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   90,    2, 0x0a /* Public */,
-       4,    0,   91,    2, 0x0a /* Public */,
-       5,    0,   92,    2, 0x0a /* Public */,
-       6,    0,   93,    2, 0x0a /* Public */,
-       7,    0,   94,    2, 0x0a /* Public */,
-       8,    0,   95,    2, 0x0a /* Public */,
-       9,    0,   96,    2, 0x0a /* Public */,
-      10,    2,   97,    2, 0x0a /* Public */,
-      14,    0,  102,    2, 0x0a /* Public */,
-      15,    0,  103,    2, 0x0a /* Public */,
-      16,    0,  104,    2, 0x0a /* Public */,
-      17,    0,  105,    2, 0x0a /* Public */,
-      18,    0,  106,    2, 0x0a /* Public */,
-      19,    0,  107,    2, 0x0a /* Public */,
+       3,    0,   85,    2, 0x0a /* Public */,
+       4,    0,   86,    2, 0x0a /* Public */,
+       5,    0,   87,    2, 0x0a /* Public */,
+       6,    0,   88,    2, 0x0a /* Public */,
+       7,    0,   89,    2, 0x0a /* Public */,
+       8,    0,   90,    2, 0x0a /* Public */,
+       9,    2,   91,    2, 0x0a /* Public */,
+      13,    0,   96,    2, 0x0a /* Public */,
+      14,    0,   97,    2, 0x0a /* Public */,
+      15,    0,   98,    2, 0x0a /* Public */,
+      16,    0,   99,    2, 0x0a /* Public */,
+      17,    0,  100,    2, 0x0a /* Public */,
+      18,    0,  101,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -104,8 +102,7 @@ static const uint qt_meta_data_BilletMeasurement[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 11, QMetaType::Int,   12,   13,
+    QMetaType::Void, 0x80000000 | 10, QMetaType::Int,   11,   12,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -129,14 +126,13 @@ void BilletMeasurement::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         case 4: _t->SlotPauseGrab(); break;
         case 5: _t->SlotOpenSync(); break;
         case 6: _t->SlotCloseSync(); break;
-        case 7: _t->SlotSetSync(); break;
-        case 8: _t->TreeWidgetOpenEditor((*reinterpret_cast< QTreeWidgetItem*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 9: _t->TreeWidgetCloseEditor(); break;
-        case 10: _t->SlotSetExTriggerParam(); break;
-        case 11: _t->SlotTriggerBtnOk(); break;
-        case 12: _t->SlotTriggerBtnCancel(); break;
-        case 13: _t->GetUserData(); break;
-        case 14: _t->InitSlot(); break;
+        case 7: _t->TreeWidgetOpenEditor((*reinterpret_cast< QTreeWidgetItem*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 8: _t->TreeWidgetCloseEditor(); break;
+        case 9: _t->SlotSetExTriggerParam(); break;
+        case 10: _t->SlotTriggerBtnOk(); break;
+        case 11: _t->SlotTriggerBtnCancel(); break;
+        case 12: _t->GetUserData(); break;
+        case 13: _t->InitSlot(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -176,13 +172,13 @@ int BilletMeasurement::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 15)
+        if (_id < 14)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 15;
+        _id -= 14;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 15)
+        if (_id < 14)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 15;
+        _id -= 14;
     }
     return _id;
 }

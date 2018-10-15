@@ -352,8 +352,8 @@ public:
         verticalLayout_5->addLayout(Layout_ImageShow);
 
         verticalLayout_5->setStretch(0, 1);
-        verticalLayout_5->setStretch(1, 5);
-        verticalLayout_5->setStretch(2, 25);
+        verticalLayout_5->setStretch(1, 2);
+        verticalLayout_5->setStretch(2, 50);
         tabWidget->addTab(tab_cam, QString());
         tab_measure = new QWidget();
         tab_measure->setObjectName(QStringLiteral("tab_measure"));

@@ -2,32 +2,36 @@
 #include <windows.h>
 #include <iostream>
 #include <BaslerCamera.h>
+#include "tinystr.h"
+#include "tinyxml.h"
 //#include <QMetaType>
 
 using namespace std;
-
-
 
 BilletMeasurement::BilletMeasurement(QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
-	//setWindowState(Qt::WindowMaximized);1111111
+	setWindowState(Qt::WindowMaximized);//1111111
+	//命令行输出窗口
 	AllocConsole();
 	freopen("CONOUT$", "w+t", stdout);
+	//加载设置好的相机参数
+	LoadIniCamParam();
 
 	cam.GetLeftUpLabelAddress(*ui.label_LeftUp);
 	cam.GetRightUpLabelAddress(*ui.label_RightUp);
-	//cam.GetLeftDownLabelAddress(*ui.label_LeftDown);
-	//cam.GetRightDownLabelAddress(*ui.label_RightDown);
-
-	//cam.Connect();
 	//取得主窗口的Qtreewidget地址
 	cam.GetCamInfoListAddress(*ui.treeWidget);
+	//cam.GetLeftDownLabelAddress(*ui.label_LeftDown);
+	//cam.GetRightDownLabelAddress(*ui.label_RightDown);
+	cam.Connect();
+	cam.SetIniCamParam(Cam);
 	//相机信息显示在Qtreewidget中
-	//cam.GetCamInitPara();
+	cam.GetCamInitPara();
+	cam.StartGrabbing();
 	WidgetItem = NULL;
-	//qRegisterMetaType<CamPara>("CamPara*");
+
 
 	SetTriggerWindow = new SetTriggerParam(this);
 	SetTriggerWindow->setWindowFlags(Qt::Window);
@@ -109,18 +113,17 @@ void BilletMeasurement::GetUserData()
 	}
 	if (WidgetItem != NULL)
 	{
-		//para.LeftUpCamIp = ui.treeWidget->topLevelItem(0)->text(3);
-		CameraPara.LeftUpImageFrequency = ui.treeWidget->topLevelItem(0)->text(5).toInt();
-		CameraPara.LeftUpExposureTime = ui.treeWidget->topLevelItem(0)->text(6).toInt();
-		CameraPara.LeftUpImageWidth = ui.treeWidget->topLevelItem(0)->text(7).toInt();
-		CameraPara.LeftUpImageHeight = ui.treeWidget->topLevelItem(0)->text(8).toInt();
+		Cam.LeftImageFrequency = ui.treeWidget->topLevelItem(0)->text(5).toInt();
+		Cam.LeftExposureTime = ui.treeWidget->topLevelItem(0)->text(6).toInt();
+		Cam.LeftImageWidth = ui.treeWidget->topLevelItem(0)->text(7).toInt();
+		Cam.LeftImageHeight = ui.treeWidget->topLevelItem(0)->text(8).toInt();
 
-		CameraPara.RightUpImageFrequency = ui.treeWidget->topLevelItem(1)->text(5).toInt();
-		CameraPara.RightUpExposureTime = ui.treeWidget->topLevelItem(1)->text(6).toInt();
-		CameraPara.RightUpImageWidth = ui.treeWidget->topLevelItem(1)->text(7).toInt();
-		CameraPara.RightUpImageHeight = ui.treeWidget->topLevelItem(1)->text(8).toInt();
+		Cam.RightImageFrequency = ui.treeWidget->topLevelItem(1)->text(5).toInt();
+		Cam.RightExposureTime = ui.treeWidget->topLevelItem(1)->text(6).toInt();
+		Cam.RightImageWidth = ui.treeWidget->topLevelItem(1)->text(7).toInt();
+		Cam.RightImageHeight = ui.treeWidget->topLevelItem(1)->text(8).toInt();
 		//emit aaa();
-		cam.SetCamPara(CameraPara);
+		cam.SetCamPara(Cam);
 	}
 
 }
@@ -150,11 +153,6 @@ void BilletMeasurement::SlotCloseSync()
 	{
 		myCom->write("EnableOutput 0\n");
 	}
-}
-
-void BilletMeasurement::SlotSetSync()
-{
-	cout << "8888888888888" << endl;
 }
 
 //void BilletMeasurement::SetUserInputPara()
@@ -192,6 +190,59 @@ void BilletMeasurement::SlotTriggerBtnCancel()
 	SetTriggerWindow->close();
 }
 
+void BilletMeasurement::LoadIniCamParam()
+{
+	TiXmlDocument *inXml = new TiXmlDocument();
+	if (!inXml->LoadFile("IniCamPara.xml"))
+	{
+		cerr << inXml->ErrorDesc() << endl;
+	}
+
+	//定义根节点，记录xml文件的起始节点
+	TiXmlElement *inRoot = inXml->FirstChildElement(); //root指向xml文档的第一个节点
+
+	if (NULL == inRoot) //判断文件是否有内容
+	{
+		cerr << "No root element ！！！" << endl;
+		inXml->Clear();
+	}
+
+	for (TiXmlElement *inElem = inRoot->FirstChildElement(); inElem != NULL; inElem = inElem->NextSiblingElement())
+	{
+		string str = inElem->Value();
+		//两个string进行比较时，使用compare，若相等返回0
+		if (!str.compare("Cam1"))
+		{
+			TiXmlElement  *Frequency = inElem->FirstChildElement();
+			Cam.LeftImageFrequency = atof(Frequency->FirstChild()->Value());
+
+			TiXmlElement  *ExposureTime = Frequency->NextSiblingElement();
+			Cam.LeftExposureTime = atof(ExposureTime->FirstChild()->Value());
+
+			TiXmlElement  *ImageWidth = ExposureTime->NextSiblingElement();
+			Cam.LeftImageWidth = atof(ImageWidth->FirstChild()->Value());
+					
+			TiXmlElement  *ImageHeight = ImageWidth->NextSiblingElement();
+			Cam.LeftImageHeight = atof(ImageHeight->FirstChild()->Value());
+		}
+
+		if (!str.compare("Cam2"))
+		{
+			TiXmlElement  *Frequency = inElem->FirstChildElement();
+			Cam.RightImageFrequency = atof(Frequency->FirstChild()->Value());
+
+			TiXmlElement  *ExposureTime = Frequency->NextSiblingElement();
+			Cam.RightExposureTime = atof(ExposureTime->FirstChild()->Value());
+
+			TiXmlElement  *ImageWidth = ExposureTime->NextSiblingElement();
+			Cam.RightImageWidth = atof(ImageWidth->FirstChild()->Value());
+
+			TiXmlElement  *ImageHeight = ImageWidth->NextSiblingElement();
+			Cam.RightImageHeight = atof(ImageHeight->FirstChild()->Value());
+		}
+	}
+}
+
 void BilletMeasurement::InitSlot()
 {
 	connect(ui.toolButton_Connect, SIGNAL(clicked()), this, SLOT(SlotCamConnect()));
@@ -206,7 +257,7 @@ void BilletMeasurement::InitSlot()
 	connect(ui.treeWidget, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)), this, SLOT(TreeWidgetOpenEditor(QTreeWidgetItem*, int)));
 	connect(ui.treeWidget, SIGNAL(itemChanged(QTreeWidgetItem*, int)), this, SLOT(TreeWidgetCloseEditor()));
 	connect(ui.treeWidget, SIGNAL(itemChanged(QTreeWidgetItem*, int)), this, SLOT(GetUserData()));
-
+	//同步板同步
 	connect(ui.toolButton_SetSync, SIGNAL(clicked()), this, SLOT(SlotSetExTriggerParam()));
 	connect(SetTriggerWindow->ui.Btn_Ok, SIGNAL(clicked()), this, SLOT(SlotTriggerBtnOk()));
 	connect(SetTriggerWindow->ui.Btn_Cancel, SIGNAL(clicked()), this, SLOT(SlotTriggerBtnCancel()));
