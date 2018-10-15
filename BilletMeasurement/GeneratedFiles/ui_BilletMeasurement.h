@@ -43,18 +43,18 @@ public:
     QVBoxLayout *verticalLayout_5;
     QHBoxLayout *horizontalLayout;
     QToolButton *toolButton_Connect;
-    QToolButton *toolButton_Disconnect;
-    QToolButton *toolButton_Start;
-    QToolButton *toolButton_Pause;
-    QToolButton *toolButton_OpenSync;
-    QToolButton *toolButton_CloseSync;
-    QToolButton *toolButton_SetSync;
     QSpacerItem *horizontalSpacer_15;
+    QToolButton *toolButton_Disconnect;
     QSpacerItem *horizontalSpacer_9;
+    QToolButton *toolButton_Start;
     QSpacerItem *horizontalSpacer_10;
+    QToolButton *toolButton_Pause;
     QSpacerItem *horizontalSpacer_12;
+    QToolButton *toolButton_OpenSync;
     QSpacerItem *horizontalSpacer_13;
+    QToolButton *toolButton_CloseSync;
     QSpacerItem *horizontalSpacer_14;
+    QToolButton *toolButton_SetSync;
     QHBoxLayout *horizontalLayout_3;
     QTreeWidget *treeWidget;
     QGridLayout *Layout_ImageShow;
@@ -158,6 +158,10 @@ public:
 
         horizontalLayout->addWidget(toolButton_Connect);
 
+        horizontalSpacer_15 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_15);
+
         toolButton_Disconnect = new QToolButton(tab_cam);
         toolButton_Disconnect->setObjectName(QStringLiteral("toolButton_Disconnect"));
         toolButton_Disconnect->setMinimumSize(QSize(80, 0));
@@ -168,6 +172,10 @@ public:
         toolButton_Disconnect->setAutoRaise(true);
 
         horizontalLayout->addWidget(toolButton_Disconnect);
+
+        horizontalSpacer_9 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_9);
 
         toolButton_Start = new QToolButton(tab_cam);
         toolButton_Start->setObjectName(QStringLiteral("toolButton_Start"));
@@ -183,6 +191,10 @@ public:
 
         horizontalLayout->addWidget(toolButton_Start);
 
+        horizontalSpacer_10 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_10);
+
         toolButton_Pause = new QToolButton(tab_cam);
         toolButton_Pause->setObjectName(QStringLiteral("toolButton_Pause"));
         toolButton_Pause->setMinimumSize(QSize(80, 0));
@@ -193,6 +205,10 @@ public:
         toolButton_Pause->setAutoRaise(true);
 
         horizontalLayout->addWidget(toolButton_Pause);
+
+        horizontalSpacer_12 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_12);
 
         toolButton_OpenSync = new QToolButton(tab_cam);
         toolButton_OpenSync->setObjectName(QStringLiteral("toolButton_OpenSync"));
@@ -209,6 +225,10 @@ public:
 
         horizontalLayout->addWidget(toolButton_OpenSync);
 
+        horizontalSpacer_13 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_13);
+
         toolButton_CloseSync = new QToolButton(tab_cam);
         toolButton_CloseSync->setObjectName(QStringLiteral("toolButton_CloseSync"));
         toolButton_CloseSync->setMinimumSize(QSize(80, 0));
@@ -221,6 +241,10 @@ public:
         toolButton_CloseSync->setAutoRaise(true);
 
         horizontalLayout->addWidget(toolButton_CloseSync);
+
+        horizontalSpacer_14 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_14);
 
         toolButton_SetSync = new QToolButton(tab_cam);
         toolButton_SetSync->setObjectName(QStringLiteral("toolButton_SetSync"));
@@ -235,30 +259,6 @@ public:
         toolButton_SetSync->setArrowType(Qt::NoArrow);
 
         horizontalLayout->addWidget(toolButton_SetSync);
-
-        horizontalSpacer_15 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_15);
-
-        horizontalSpacer_9 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_9);
-
-        horizontalSpacer_10 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_10);
-
-        horizontalSpacer_12 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_12);
-
-        horizontalSpacer_13 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_13);
-
-        horizontalSpacer_14 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_14);
 
 
         verticalLayout_5->addLayout(horizontalLayout);
@@ -293,6 +293,7 @@ public:
         Layout_ImageShow->setObjectName(QStringLiteral("Layout_ImageShow"));
         label_RightUp = new QLabel(tab_cam);
         label_RightUp->setObjectName(QStringLiteral("label_RightUp"));
+        label_RightUp->setMaximumSize(QSize(800, 600));
         label_RightUp->setStyleSheet(QStringLiteral("background-color: rgb(0, 0, 0);"));
 
         Layout_ImageShow->addWidget(label_RightUp, 1, 1, 1, 1);
@@ -305,6 +306,7 @@ public:
 
         label_LeftUp = new QLabel(tab_cam);
         label_LeftUp->setObjectName(QStringLiteral("label_LeftUp"));
+        label_LeftUp->setMaximumSize(QSize(800, 600));
         label_LeftUp->setStyleSheet(QStringLiteral("background-color: rgb(0, 0, 0);"));
         label_LeftUp->setTextFormat(Qt::AutoText);
 

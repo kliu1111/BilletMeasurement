@@ -5,6 +5,7 @@
 #include "ui_BilletMeasurement.h"
 #include <BaslerCamera.h>
 #include "qextserialport/qextserialport.h"
+#include "SetTriggerParam.h"
 //class BaslerCamera;
 //class CamPara;
 
@@ -23,7 +24,7 @@ private:
 	BaslerCamera::CamPara CameraPara;
 	QTreeWidgetItem *WidgetItem;
 	int ItemCol;
-
+	SetTriggerParam* SetTriggerWindow;
 	QextSerialPort *myCom = nullptr;
 	bool IsOpen;
 
@@ -51,6 +52,9 @@ public slots :
 	void TreeWidgetCloseEditor();
 
 	//void SetUserInputPara();
+	void SlotSetExTriggerParam();
+	void SlotTriggerBtnOk();
+	void SlotTriggerBtnCancel();
 
 	void GetUserData();
 

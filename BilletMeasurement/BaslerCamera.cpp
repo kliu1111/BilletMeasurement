@@ -272,18 +272,23 @@ void BaslerCamera::GrabThreadFunction()
 			{
 				if (LeftUpptrGrabResult->GrabSucceeded() && RightUpptrGrabResult->GrabSucceeded())
 				{
-					QImage LeftImg = QImage((unsigned char *)(LeftUpptrGrabResult->GetBuffer()), LeftUpptrGrabResult->GetWidth(), LeftUpptrGrabResult->GetHeight(), QImage::Format_Indexed8);
-					QImage RightImg = QImage((unsigned char *)(RightUpptrGrabResult->GetBuffer()), RightUpptrGrabResult->GetWidth(), RightUpptrGrabResult->GetHeight(), QImage::Format_Indexed8);
+					LeftImg = QImage((unsigned char *)(LeftUpptrGrabResult->GetBuffer()), LeftUpptrGrabResult->GetWidth(), LeftUpptrGrabResult->GetHeight(), QImage::Format_Indexed8);
+					RightImg = QImage((unsigned char *)(RightUpptrGrabResult->GetBuffer()), RightUpptrGrabResult->GetWidth(), RightUpptrGrabResult->GetHeight(), QImage::Format_Indexed8);
 
 					LeftUpLabelAdd->setPixmap(QPixmap::fromImage(LeftImg).scaled(LeftUpLabelAdd->size(), Qt::KeepAspectRatioByExpanding));
-					//LeftUpLabelAdd->show();
 					RightUpLabelAdd->setPixmap(QPixmap::fromImage(RightImg).scaled(RightUpLabelAdd->size(), Qt::KeepAspectRatioByExpanding));
-					//LeftUpLabelAdd->show();
+					Lpixmap = LeftUpLabelAdd->pixmap();
+					Rpixmap = RightUpLabelAdd->pixmap();
+					if (Rpixmap && Lpixmap)
+					{
+						time = QDateTime::currentDateTime();
+						//str_time = time.toString("yyyy-MM-dd_hh-mm-ss");
+						str_time = time.toString("yyyy-MM-dd-hh-mm-ss-zzz");
+						Lpixmap->save(("image/L_image/") + str_time + ".jpg");
+						Rpixmap->save(("image/R_image/") + str_time + ".jpg");
+					}
+
 					QCoreApplication::processEvents();
-					//LeftLabelAdd->repaint();
-					//RightLabelAdd->repaint();
-					//LeftLabelAdd->clear();
-					//RightLabelAdd->clear();
 				}
 			}
 		}
@@ -351,8 +356,8 @@ void BaslerCamera::GetCamInitPara()
 		Cam1Info->setText(4, QStringLiteral("已连接"));
 		Cam1Info->setText(5, QString::number(CamList[0].AcquisitionFrameRateAbs.GetValue()));
 		Cam1Info->setText(6, QString::number(CamList[0].ExposureTimeAbs.GetValue()));
-		Cam1Info->setText(7, QString::number(CamList[0].Height.GetValue()));
-		Cam1Info->setText(8, QString::number(CamList[0].Width.GetValue()));
+		Cam1Info->setText(7, QString::number(CamList[0].Width.GetValue()));
+		Cam1Info->setText(8, QString::number(CamList[0].Height.GetValue()));
 	} 
 	//------Cam2
 	if (CamList[1].IsOpen())
@@ -364,8 +369,8 @@ void BaslerCamera::GetCamInitPara()
 		Cam2Info->setText(4, QStringLiteral("已连接"));
 		Cam2Info->setText(5, QString::number(CamList[1].AcquisitionFrameRateAbs.GetValue()));
 		Cam2Info->setText(6, QString::number(CamList[1].ExposureTimeAbs.GetValue()));
-		Cam2Info->setText(7, QString::number(CamList[1].Height.GetValue()));
-		Cam2Info->setText(8, QString::number(CamList[1].Width.GetValue()));
+		Cam2Info->setText(7, QString::number(CamList[1].Width.GetValue()));
+		Cam2Info->setText(8, QString::number(CamList[1].Height.GetValue()));
 	}
 
 	////------Cam3

@@ -29,6 +29,8 @@ BilletMeasurement::BilletMeasurement(QWidget *parent)
 	WidgetItem = NULL;
 	//qRegisterMetaType<CamPara>("CamPara*");
 
+	SetTriggerWindow = new SetTriggerParam(this);
+	SetTriggerWindow->setWindowFlags(Qt::Window);
 	InitSlot();
 
 }
@@ -159,6 +161,37 @@ void BilletMeasurement::SlotSetSync()
 //{
 //	cam.SetCamPara(para);
 //}
+
+void BilletMeasurement::SlotSetExTriggerParam()
+{
+	SetTriggerWindow->show();
+}
+
+void BilletMeasurement::SlotTriggerBtnOk()
+{
+	if (myCom == nullptr)
+	{
+		myCom = new QextSerialPort("COM4", QextSerialPort::Polling);
+		IsOpen = myCom->open(QIODevice::ReadWrite);
+	}
+	if (IsOpen)
+	{
+		int TextData = (SetTriggerWindow->ui.lineEdit->text()).toInt();
+		int InputData = TextData * 4;
+		QString CmdData = "Line " + QString::number(InputData) + "\n";
+		char CharCmdData[9];
+		strcpy(CharCmdData, CmdData.toStdString().c_str());
+		myCom->write(CharCmdData);
+	}
+	SetTriggerWindow->close();
+
+}
+
+void BilletMeasurement::SlotTriggerBtnCancel()
+{
+	SetTriggerWindow->close();
+}
+
 void BilletMeasurement::InitSlot()
 {
 	connect(ui.toolButton_Connect, SIGNAL(clicked()), this, SLOT(SlotCamConnect()));
@@ -172,8 +205,11 @@ void BilletMeasurement::InitSlot()
 	//Ë«»÷¿É±à¼­µÄ×´Ì¬
 	connect(ui.treeWidget, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)), this, SLOT(TreeWidgetOpenEditor(QTreeWidgetItem*, int)));
 	connect(ui.treeWidget, SIGNAL(itemChanged(QTreeWidgetItem*, int)), this, SLOT(TreeWidgetCloseEditor()));
-
 	connect(ui.treeWidget, SIGNAL(itemChanged(QTreeWidgetItem*, int)), this, SLOT(GetUserData()));
+
+	connect(ui.toolButton_SetSync, SIGNAL(clicked()), this, SLOT(SlotSetExTriggerParam()));
+	connect(SetTriggerWindow->ui.Btn_Ok, SIGNAL(clicked()), this, SLOT(SlotTriggerBtnOk()));
+	connect(SetTriggerWindow->ui.Btn_Cancel, SIGNAL(clicked()), this, SLOT(SlotTriggerBtnCancel()));
 
 	//connect(this, SIGNAL(aaa()), this, SLOT(SetUserInputPara()));
 }

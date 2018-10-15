@@ -1,4 +1,5 @@
 #pragma once
+#include <QDateTime>
 #include <QObject>
 #include <QMetaType>
 #include <QString>
@@ -58,6 +59,12 @@ public:
 	CBaslerGigEInstantCameraArray CamList;
 	//BaslerCamera *cam;
 	//CamPara *para;
+	QImage LeftImg;
+	QImage RightImg;
+	const QPixmap *Lpixmap;
+	const QPixmap *Rpixmap;
+	QString str_time;
+	QDateTime time;
 
 	//连接检测到的所有的相机
 	void Connect();
