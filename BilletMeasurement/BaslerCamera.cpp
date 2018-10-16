@@ -407,33 +407,33 @@ void BaslerCamera::GetCamInitPara()
 
 
 }
-void BaslerCamera::SetIniCamParam(CameraPara inipara)
+void BaslerCamera::SetIniCamParam(CameraPara CamPara)
 {
-	CamList[0].AcquisitionFrameRateAbs.SetValue(inipara.LeftImageFrequency);
-	CamList[0].ExposureTimeAbs.SetValue(inipara.LeftExposureTime);
-	CamList[0].Width.SetValue(inipara.LeftImageWidth);
-	CamList[0].Height.SetValue(inipara.LeftImageHeight);
+	CamList[0].AcquisitionFrameRateAbs.SetValue(CamPara.LeftImageFrequency);
+	CamList[0].ExposureTimeAbs.SetValue(CamPara.LeftExposureTime);
+	CamList[0].Width.SetValue(CamPara.LeftImageWidth);
+	CamList[0].Height.SetValue(CamPara.LeftImageHeight);
 
-	CamList[1].AcquisitionFrameRateAbs.SetValue(inipara.RightImageFrequency);
-	CamList[1].ExposureTimeAbs.SetValue(inipara.RightExposureTime);
-	CamList[1].Width.SetValue(inipara.RightImageWidth);
-	CamList[1].Height.SetValue(inipara.RightImageHeight);
+	CamList[1].AcquisitionFrameRateAbs.SetValue(CamPara.RightImageFrequency);
+	CamList[1].ExposureTimeAbs.SetValue(CamPara.RightExposureTime);
+	CamList[1].Width.SetValue(CamPara.RightImageWidth);
+	CamList[1].Height.SetValue(CamPara.RightImageHeight);
 }
-void BaslerCamera::SetCamPara(CameraPara Para)
+void BaslerCamera::SetCamPara(CameraPara CamPara)
 {
 	try
 	{
 		//CamList[0].GevPersistentIPAddress.SetValue(Para.LeftUpCamIp.toInt());
 		//int aa = Para.LeftUpImageFrequency;
-		CamList[0].AcquisitionFrameRateAbs.SetValue(Para.LeftImageFrequency);
-		CamList[0].ExposureTimeAbs.SetValue(Para.LeftExposureTime);
-		CamList[0].Width.SetValue(Para.LeftImageWidth);
-		CamList[0].Height.SetValue(Para.LeftImageHeight);
+		CamList[0].AcquisitionFrameRateAbs.SetValue(CamPara.LeftImageFrequency);
+		CamList[0].ExposureTimeAbs.SetValue(CamPara.LeftExposureTime);
+		CamList[0].Width.SetValue(CamPara.LeftImageWidth);
+		CamList[0].Height.SetValue(CamPara.LeftImageHeight);
 
-		CamList[1].AcquisitionFrameRateAbs.SetValue(Para.RightImageFrequency);
-		CamList[1].ExposureTimeAbs.SetValue(Para.RightExposureTime);
-		CamList[1].Width.SetValue(Para.RightImageWidth);
-		CamList[1].Height.SetValue(Para.RightImageHeight);
+		CamList[1].AcquisitionFrameRateAbs.SetValue(CamPara.RightImageFrequency);
+		CamList[1].ExposureTimeAbs.SetValue(CamPara.RightExposureTime);
+		CamList[1].Width.SetValue(CamPara.RightImageWidth);
+		CamList[1].Height.SetValue(CamPara.RightImageHeight);
 	}
 	catch (const GenericException &e)
 	{

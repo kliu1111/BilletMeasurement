@@ -1,27 +1,13 @@
-﻿生成启动时间为 2018/10/15 18:04:13。
-     1>项目“H:\KliuWorkspace\BilletMeasurement\BilletMeasurement\BilletMeasurement\BilletMeasurement.vcxproj”在节点 2 上(Rebuild 个目标)。
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppClean.targets(76,5): warning : 文件“h:\kliuworkspace\billetmeasurement\billetmeasurement\x64\debug\billetmeasurement.ilk”正由另一进程使用，因此该进程无法访问此文件。
+﻿生成启动时间为 2018/10/16 13:17:35。
+     1>项目“H:\KliuWorkspace\BilletMeasurement\BilletMeasurement\BilletMeasurement\BilletMeasurement.vcxproj”在节点 2 上(Build 个目标)。
      1>CustomBuild:
-         Moc'ing BilletMeasurement.h...
          Uic'ing BilletMeasurement.ui...
-         Moc'ing SetTriggerParam.h...
-         Rcc'ing BilletMeasurement.qrc...
-         Uic'ing SetTriggerParam.ui...
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /IC:\Qt\Qt5.5.0\5.5\msvc2013_64\include /I.\GeneratedFiles\Debug /IC:\Qt\Qt5.5.0\5.5\msvc2013_64\include\QtCore /IC:\Qt\Qt5.5.0\5.5\msvc2013_64\include\QtGui /IC:\Qt\Qt5.5.0\5.5\msvc2013_64\include\QtWidgets /I"C:\Program Files\Basler\pylon 5\Development\include" /Zi /nologo /W1 /WX- /Od /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt BaslerCamera.cpp BilletMeasurement.cpp GeneratedFiles\Debug\moc_BilletMeasurement.cpp GeneratedFiles\Debug\moc_SetTriggerParam.cpp main.cpp SetTriggerParam.cpp tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp
-         BaslerCamera.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /IC:\Qt\Qt5.5.0\5.5\msvc2013_64\include /I.\GeneratedFiles\Debug /IC:\Qt\Qt5.5.0\5.5\msvc2013_64\include\QtCore /IC:\Qt\Qt5.5.0\5.5\msvc2013_64\include\QtGui /IC:\Qt\Qt5.5.0\5.5\msvc2013_64\include\QtWidgets /I"C:\Program Files\Basler\pylon 5\Development\include" /Zi /nologo /W1 /WX- /Od /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt BilletMeasurement.cpp GeneratedFiles\Debug\moc_BilletMeasurement.cpp main.cpp
          BilletMeasurement.cpp
          moc_BilletMeasurement.cpp
-         moc_SetTriggerParam.cpp
          main.cpp
-         SetTriggerParam.cpp
-         tinystr.cpp
-         tinyxml.cpp
-         tinyxmlerror.cpp
-         tinyxmlparser.cpp
          正在生成代码...
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /IC:\Qt\Qt5.5.0\5.5\msvc2013_64\include /I.\GeneratedFiles\Debug /IC:\Qt\Qt5.5.0\5.5\msvc2013_64\include\QtCore /IC:\Qt\Qt5.5.0\5.5\msvc2013_64\include\QtGui /IC:\Qt\Qt5.5.0\5.5\msvc2013_64\include\QtWidgets /I"C:\Program Files\Basler\pylon 5\Development\include" /Zi /nologo /W1 /WX- /Od /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt GeneratedFiles\qrc_BilletMeasurement.cpp
-         qrc_BilletMeasurement.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"H:\KliuWorkspace\BilletMeasurement\BilletMeasurement\x64\Debug\\BilletMeasurement.exe" /NOLOGO /LIBPATH:C:\Qt\Qt5.5.0\5.5\msvc2013_64\lib /LIBPATH:"C:\Program Files\Basler\pylon 5\Development\lib\x64" qtmaind.lib Qt5Cored.lib Qt5Guid.lib Qt5Widgetsd.lib qextserialport.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"H:\KliuWorkspace\BilletMeasurement\BilletMeasurement\x64\Debug\BilletMeasurement.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"H:\KliuWorkspace\BilletMeasurement\BilletMeasurement\x64\Debug\BilletMeasurement.lib" /MACHINE:X64 x64\Debug\BaslerCamera.obj
          x64\Debug\BilletMeasurement.obj
@@ -34,10 +20,9 @@
          x64\Debug\tinyxml.obj
          x64\Debug\tinyxmlerror.obj
          x64\Debug\tinyxmlparser.obj
-         LINK : 没有找到 H:\KliuWorkspace\BilletMeasurement\BilletMeasurement\x64\Debug\\BilletMeasurement.exe 或上一个增量链接没有生成它；正在执行完全链接
          BilletMeasurement.vcxproj -> H:\KliuWorkspace\BilletMeasurement\BilletMeasurement\x64\Debug\BilletMeasurement.exe
-     1>已完成生成项目“H:\KliuWorkspace\BilletMeasurement\BilletMeasurement\BilletMeasurement\BilletMeasurement.vcxproj”(Rebuild 个目标)的操作。
+     1>已完成生成项目“H:\KliuWorkspace\BilletMeasurement\BilletMeasurement\BilletMeasurement\BilletMeasurement.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:10.85
+已用时间 00:00:05.42

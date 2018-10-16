@@ -79,13 +79,15 @@ public:
     QLabel *label_9;
     QLabel *label_15;
     QLabel *label_16;
+    QWidget *tab;
+    QWidget *tab_2;
 
     void setupUi(QMainWindow *BilletMeasurementClass)
     {
         if (BilletMeasurementClass->objectName().isEmpty())
             BilletMeasurementClass->setObjectName(QStringLiteral("BilletMeasurementClass"));
         BilletMeasurementClass->setEnabled(true);
-        BilletMeasurementClass->resize(956, 810);
+        BilletMeasurementClass->resize(956, 761);
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -429,6 +431,12 @@ public:
         verticalLayout->setStretch(0, 1);
         verticalLayout->setStretch(1, 10);
         tabWidget->addTab(tab_measure, QString());
+        tab = new QWidget();
+        tab->setObjectName(QStringLiteral("tab"));
+        tabWidget->addTab(tab, QString());
+        tab_2 = new QWidget();
+        tab_2->setObjectName(QStringLiteral("tab_2"));
+        tabWidget->addTab(tab_2, QString());
 
         verticalLayout_4->addWidget(tabWidget);
 
@@ -487,6 +495,8 @@ public:
         label_15->setText(QApplication::translate("BilletMeasurementClass", "\344\271\213\345\211\215\347\232\204\350\275\256\345\273\223\347\232\204\346\225\260\346\215\256", 0));
         label_16->setText(QApplication::translate("BilletMeasurementClass", "TextLabel", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_measure), QApplication::translate("BilletMeasurementClass", "\350\275\256\345\273\223\346\265\213\351\207\217", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("BilletMeasurementClass", "\346\235\277\345\235\257\346\265\213\351\207\217", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("BilletMeasurementClass", "\346\226\271\345\235\257\346\265\213\351\207\217", 0));
     } // retranslateUi
 
 };

@@ -3,13 +3,13 @@
   <Cam1>
     <CamFrequency>20</CamFrequency>
     <CamExposureTime>30000</CamExposureTime>
-    <ImageWidth>1000</ImageWidth>
-    <ImageHeight>800</ImageHeight>
+    <ImageWidth>800</ImageWidth>
+    <ImageHeight>600</ImageHeight>
   </Cam1>  
   
   <Cam2>
-    <CamFrequency>15</CamFrequency>
-    <CamExposureTime>20000</CamExposureTime>
+    <CamFrequency>20</CamFrequency>
+    <CamExposureTime>30000</CamExposureTime>
     <ImageWidth>800</ImageWidth>
     <ImageHeight>600</ImageHeight>
   </Cam2>  

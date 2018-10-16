@@ -20,7 +20,7 @@ public:
 private:
 	Ui::BilletMeasurementClass ui;
 	BaslerCamera cam;
-	CameraPara Cam;
+	CameraPara CamPara;
 
 	//BaslerCamera::CamPara CameraPara;
 	QTreeWidgetItem *WidgetItem;

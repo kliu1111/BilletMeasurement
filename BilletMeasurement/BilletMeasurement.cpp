@@ -4,7 +4,6 @@
 #include <BaslerCamera.h>
 #include "tinystr.h"
 #include "tinyxml.h"
-//#include <QMetaType>
 
 using namespace std;
 
@@ -12,11 +11,9 @@ BilletMeasurement::BilletMeasurement(QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
-	setWindowState(Qt::WindowMaximized);//1111111
-	//命令行输出窗口
-	AllocConsole();
-	freopen("CONOUT$", "w+t", stdout);
-	//加载设置好的相机参数
+	//setWindowState(Qt::WindowMaximized);
+	//AllocConsole();
+	//freopen("CONOUT$", "w+t", stdout);
 	LoadIniCamParam();
 
 	cam.GetLeftUpLabelAddress(*ui.label_LeftUp);
@@ -26,7 +23,7 @@ BilletMeasurement::BilletMeasurement(QWidget *parent)
 	//cam.GetLeftDownLabelAddress(*ui.label_LeftDown);
 	//cam.GetRightDownLabelAddress(*ui.label_RightDown);
 	cam.Connect();
-	cam.SetIniCamParam(Cam);
+	cam.SetIniCamParam(CamPara);
 	//相机信息显示在Qtreewidget中
 	cam.GetCamInitPara();
 	cam.StartGrabbing();
@@ -113,17 +110,17 @@ void BilletMeasurement::GetUserData()
 	}
 	if (WidgetItem != NULL)
 	{
-		Cam.LeftImageFrequency = ui.treeWidget->topLevelItem(0)->text(5).toInt();
-		Cam.LeftExposureTime = ui.treeWidget->topLevelItem(0)->text(6).toInt();
-		Cam.LeftImageWidth = ui.treeWidget->topLevelItem(0)->text(7).toInt();
-		Cam.LeftImageHeight = ui.treeWidget->topLevelItem(0)->text(8).toInt();
+		CamPara.LeftImageFrequency = ui.treeWidget->topLevelItem(0)->text(5).toInt();
+		CamPara.LeftExposureTime = ui.treeWidget->topLevelItem(0)->text(6).toInt();
+		CamPara.LeftImageWidth = ui.treeWidget->topLevelItem(0)->text(7).toInt();
+		CamPara.LeftImageHeight = ui.treeWidget->topLevelItem(0)->text(8).toInt();
 
-		Cam.RightImageFrequency = ui.treeWidget->topLevelItem(1)->text(5).toInt();
-		Cam.RightExposureTime = ui.treeWidget->topLevelItem(1)->text(6).toInt();
-		Cam.RightImageWidth = ui.treeWidget->topLevelItem(1)->text(7).toInt();
-		Cam.RightImageHeight = ui.treeWidget->topLevelItem(1)->text(8).toInt();
+		CamPara.RightImageFrequency = ui.treeWidget->topLevelItem(1)->text(5).toInt();
+		CamPara.RightExposureTime = ui.treeWidget->topLevelItem(1)->text(6).toInt();
+		CamPara.RightImageWidth = ui.treeWidget->topLevelItem(1)->text(7).toInt();
+		CamPara.RightImageHeight = ui.treeWidget->topLevelItem(1)->text(8).toInt();
 		//emit aaa();
-		cam.SetCamPara(Cam);
+		cam.SetCamPara(CamPara);
 	}
 
 }
@@ -214,31 +211,31 @@ void BilletMeasurement::LoadIniCamParam()
 		if (!str.compare("Cam1"))
 		{
 			TiXmlElement  *Frequency = inElem->FirstChildElement();
-			Cam.LeftImageFrequency = atof(Frequency->FirstChild()->Value());
+			CamPara.LeftImageFrequency = atof(Frequency->FirstChild()->Value());
 
 			TiXmlElement  *ExposureTime = Frequency->NextSiblingElement();
-			Cam.LeftExposureTime = atof(ExposureTime->FirstChild()->Value());
+			CamPara.LeftExposureTime = atof(ExposureTime->FirstChild()->Value());
 
 			TiXmlElement  *ImageWidth = ExposureTime->NextSiblingElement();
-			Cam.LeftImageWidth = atof(ImageWidth->FirstChild()->Value());
+			CamPara.LeftImageWidth = atof(ImageWidth->FirstChild()->Value());
 					
 			TiXmlElement  *ImageHeight = ImageWidth->NextSiblingElement();
-			Cam.LeftImageHeight = atof(ImageHeight->FirstChild()->Value());
+			CamPara.LeftImageHeight = atof(ImageHeight->FirstChild()->Value());
 		}
 
 		if (!str.compare("Cam2"))
 		{
 			TiXmlElement  *Frequency = inElem->FirstChildElement();
-			Cam.RightImageFrequency = atof(Frequency->FirstChild()->Value());
+			CamPara.RightImageFrequency = atof(Frequency->FirstChild()->Value());
 
 			TiXmlElement  *ExposureTime = Frequency->NextSiblingElement();
-			Cam.RightExposureTime = atof(ExposureTime->FirstChild()->Value());
+			CamPara.RightExposureTime = atof(ExposureTime->FirstChild()->Value());
 
 			TiXmlElement  *ImageWidth = ExposureTime->NextSiblingElement();
-			Cam.RightImageWidth = atof(ImageWidth->FirstChild()->Value());
+			CamPara.RightImageWidth = atof(ImageWidth->FirstChild()->Value());
 
 			TiXmlElement  *ImageHeight = ImageWidth->NextSiblingElement();
-			Cam.RightImageHeight = atof(ImageHeight->FirstChild()->Value());
+			CamPara.RightImageHeight = atof(ImageHeight->FirstChild()->Value());
 		}
 	}
 }

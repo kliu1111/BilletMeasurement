@@ -49,7 +49,7 @@ public:
 	const QPixmap *Rpixmap;
 	QString str_time;
 	QDateTime time;
-	void SetIniCamParam(CameraPara inipara);
+
 	//连接检测到的所有的相机
 	void Connect();
 
@@ -75,7 +75,8 @@ public:
 	void GetCamInitPara();
 
 	//设置相机参数
-	void SetCamPara(CameraPara Para);
+	void SetCamPara(CameraPara CamPara);
+	void SetIniCamParam(CameraPara CamPara);
 
 	//采集线程
 	static void GrabThread(BaslerCamera* pClass);
