@@ -14,11 +14,13 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QSplitter>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QToolButton>
 #include <QtWidgets/QTreeWidget>
@@ -39,22 +41,44 @@ public:
     QWidget *centralWidget;
     QVBoxLayout *verticalLayout_4;
     QTabWidget *tabWidget;
-    QWidget *tab_cam;
+    QWidget *tab_2;
+    QGridLayout *gridLayout_3;
+    QVBoxLayout *verticalLayout_2;
+    QGroupBox *groupBox_4;
+    QHBoxLayout *horizontalLayout_8;
+    QTreeWidget *treeWidget_2;
+    QGroupBox *groupBox_7;
+    QHBoxLayout *horizontalLayout_9;
+    QTreeWidget *treeWidget_5;
+    QGroupBox *groupBox_3;
+    QHBoxLayout *horizontalLayout_6;
+    QHBoxLayout *horizontalLayout_10;
+    QGroupBox *groupBox_8;
+    QSplitter *splitter;
+    QGroupBox *groupBox_9;
+    QHBoxLayout *horizontalLayout_7;
+    QGroupBox *groupBox;
+    QVBoxLayout *verticalLayout;
+    QLabel *label_5;
+    QGroupBox *groupBox_2;
+    QWidget *tab;
+    QHBoxLayout *horizontalLayout_5;
+    QWidget *tabWidgetPage1;
     QVBoxLayout *verticalLayout_5;
     QHBoxLayout *horizontalLayout;
     QToolButton *toolButton_Connect;
-    QSpacerItem *horizontalSpacer_15;
     QToolButton *toolButton_Disconnect;
-    QSpacerItem *horizontalSpacer_9;
     QToolButton *toolButton_Start;
-    QSpacerItem *horizontalSpacer_10;
     QToolButton *toolButton_Pause;
-    QSpacerItem *horizontalSpacer_12;
     QToolButton *toolButton_OpenSync;
-    QSpacerItem *horizontalSpacer_13;
     QToolButton *toolButton_CloseSync;
-    QSpacerItem *horizontalSpacer_14;
     QToolButton *toolButton_SetSync;
+    QSpacerItem *horizontalSpacer_10;
+    QSpacerItem *horizontalSpacer_9;
+    QSpacerItem *horizontalSpacer_12;
+    QSpacerItem *horizontalSpacer_13;
+    QSpacerItem *horizontalSpacer_15;
+    QSpacerItem *horizontalSpacer_14;
     QHBoxLayout *horizontalLayout_3;
     QTreeWidget *treeWidget;
     QGridLayout *Layout_ImageShow;
@@ -66,28 +90,13 @@ public:
     QLabel *label_2;
     QLabel *label_RightDown;
     QLabel *label_LeftDown;
-    QWidget *tab_measure;
-    QVBoxLayout *verticalLayout;
-    QHBoxLayout *horizontalLayout_5;
-    QLabel *label_17;
-    QGridLayout *gridLayout_2;
-    QLabel *label_13;
-    QLabel *label_11;
-    QLabel *label_10;
-    QLabel *label_14;
-    QLabel *label_12;
-    QLabel *label_9;
-    QLabel *label_15;
-    QLabel *label_16;
-    QWidget *tab;
-    QWidget *tab_2;
 
     void setupUi(QMainWindow *BilletMeasurementClass)
     {
         if (BilletMeasurementClass->objectName().isEmpty())
             BilletMeasurementClass->setObjectName(QStringLiteral("BilletMeasurementClass"));
         BilletMeasurementClass->setEnabled(true);
-        BilletMeasurementClass->resize(956, 761);
+        BilletMeasurementClass->resize(996, 723);
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -137,16 +146,143 @@ public:
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
         tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tab_cam = new QWidget();
-        tab_cam->setObjectName(QStringLiteral("tab_cam"));
-        verticalLayout_5 = new QVBoxLayout(tab_cam);
+        tabWidget->setAutoFillBackground(false);
+        tab_2 = new QWidget();
+        tab_2->setObjectName(QStringLiteral("tab_2"));
+        tab_2->setEnabled(true);
+        gridLayout_3 = new QGridLayout(tab_2);
+        gridLayout_3->setSpacing(6);
+        gridLayout_3->setContentsMargins(11, 11, 11, 11);
+        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setSpacing(6);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        groupBox_4 = new QGroupBox(tab_2);
+        groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
+        horizontalLayout_8 = new QHBoxLayout(groupBox_4);
+        horizontalLayout_8->setSpacing(6);
+        horizontalLayout_8->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
+        treeWidget_2 = new QTreeWidget(groupBox_4);
+        treeWidget_2->setObjectName(QStringLiteral("treeWidget_2"));
+        treeWidget_2->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        treeWidget_2->header()->setVisible(true);
+        treeWidget_2->header()->setDefaultSectionSize(50);
+        treeWidget_2->header()->setMinimumSectionSize(70);
+        treeWidget_2->header()->setStretchLastSection(true);
+
+        horizontalLayout_8->addWidget(treeWidget_2);
+
+
+        verticalLayout_2->addWidget(groupBox_4);
+
+        groupBox_7 = new QGroupBox(tab_2);
+        groupBox_7->setObjectName(QStringLiteral("groupBox_7"));
+        horizontalLayout_9 = new QHBoxLayout(groupBox_7);
+        horizontalLayout_9->setSpacing(6);
+        horizontalLayout_9->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
+        treeWidget_5 = new QTreeWidget(groupBox_7);
+        treeWidget_5->setObjectName(QStringLiteral("treeWidget_5"));
+        treeWidget_5->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        treeWidget_5->header()->setVisible(true);
+        treeWidget_5->header()->setDefaultSectionSize(50);
+        treeWidget_5->header()->setMinimumSectionSize(70);
+        treeWidget_5->header()->setStretchLastSection(true);
+
+        horizontalLayout_9->addWidget(treeWidget_5);
+
+
+        verticalLayout_2->addWidget(groupBox_7);
+
+        groupBox_3 = new QGroupBox(tab_2);
+        groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
+
+        verticalLayout_2->addWidget(groupBox_3);
+
+        verticalLayout_2->setStretch(0, 3);
+        verticalLayout_2->setStretch(1, 3);
+        verticalLayout_2->setStretch(2, 2);
+
+        gridLayout_3->addLayout(verticalLayout_2, 0, 0, 2, 1);
+
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setSpacing(6);
+        horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
+        horizontalLayout_10 = new QHBoxLayout();
+        horizontalLayout_10->setSpacing(6);
+        horizontalLayout_10->setObjectName(QStringLiteral("horizontalLayout_10"));
+        groupBox_8 = new QGroupBox(tab_2);
+        groupBox_8->setObjectName(QStringLiteral("groupBox_8"));
+
+        horizontalLayout_10->addWidget(groupBox_8);
+
+
+        horizontalLayout_6->addLayout(horizontalLayout_10);
+
+        splitter = new QSplitter(tab_2);
+        splitter->setObjectName(QStringLiteral("splitter"));
+        splitter->setOrientation(Qt::Horizontal);
+        groupBox_9 = new QGroupBox(splitter);
+        groupBox_9->setObjectName(QStringLiteral("groupBox_9"));
+        splitter->addWidget(groupBox_9);
+
+        horizontalLayout_6->addWidget(splitter);
+
+        horizontalLayout_6->setStretch(0, 1);
+        horizontalLayout_6->setStretch(1, 1);
+
+        gridLayout_3->addLayout(horizontalLayout_6, 0, 1, 1, 1);
+
+        horizontalLayout_7 = new QHBoxLayout();
+        horizontalLayout_7->setSpacing(6);
+        horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
+        groupBox = new QGroupBox(tab_2);
+        groupBox->setObjectName(QStringLiteral("groupBox"));
+        verticalLayout = new QVBoxLayout(groupBox);
+        verticalLayout->setSpacing(6);
+        verticalLayout->setContentsMargins(11, 11, 11, 11);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        label_5 = new QLabel(groupBox);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setStyleSheet(QStringLiteral("background-color: rgb(4, 4, 4);"));
+
+        verticalLayout->addWidget(label_5);
+
+
+        horizontalLayout_7->addWidget(groupBox);
+
+        groupBox_2 = new QGroupBox(tab_2);
+        groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
+
+        horizontalLayout_7->addWidget(groupBox_2);
+
+
+        gridLayout_3->addLayout(horizontalLayout_7, 1, 1, 1, 1);
+
+        gridLayout_3->setRowStretch(0, 2);
+        gridLayout_3->setRowStretch(1, 3);
+        gridLayout_3->setColumnStretch(0, 2);
+        gridLayout_3->setColumnStretch(1, 11);
+        tabWidget->addTab(tab_2, QString());
+        tab = new QWidget();
+        tab->setObjectName(QStringLiteral("tab"));
+        tab->setInputMethodHints(Qt::ImhNone);
+        horizontalLayout_5 = new QHBoxLayout(tab);
+        horizontalLayout_5->setSpacing(6);
+        horizontalLayout_5->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
+        tabWidget->addTab(tab, QString());
+        tabWidgetPage1 = new QWidget();
+        tabWidgetPage1->setObjectName(QStringLiteral("tabWidgetPage1"));
+        verticalLayout_5 = new QVBoxLayout(tabWidgetPage1);
         verticalLayout_5->setSpacing(1);
         verticalLayout_5->setContentsMargins(11, 11, 11, 11);
         verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(1);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        toolButton_Connect = new QToolButton(tab_cam);
+        toolButton_Connect = new QToolButton(tabWidgetPage1);
         toolButton_Connect->setObjectName(QStringLiteral("toolButton_Connect"));
         toolButton_Connect->setMinimumSize(QSize(80, 0));
         toolButton_Connect->setMaximumSize(QSize(80, 16777215));
@@ -160,11 +296,7 @@ public:
 
         horizontalLayout->addWidget(toolButton_Connect);
 
-        horizontalSpacer_15 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_15);
-
-        toolButton_Disconnect = new QToolButton(tab_cam);
+        toolButton_Disconnect = new QToolButton(tabWidgetPage1);
         toolButton_Disconnect->setObjectName(QStringLiteral("toolButton_Disconnect"));
         toolButton_Disconnect->setMinimumSize(QSize(80, 0));
         toolButton_Disconnect->setMaximumSize(QSize(80, 16777215));
@@ -175,11 +307,7 @@ public:
 
         horizontalLayout->addWidget(toolButton_Disconnect);
 
-        horizontalSpacer_9 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_9);
-
-        toolButton_Start = new QToolButton(tab_cam);
+        toolButton_Start = new QToolButton(tabWidgetPage1);
         toolButton_Start->setObjectName(QStringLiteral("toolButton_Start"));
         toolButton_Start->setMinimumSize(QSize(80, 0));
         toolButton_Start->setMaximumSize(QSize(80, 16777215));
@@ -193,11 +321,7 @@ public:
 
         horizontalLayout->addWidget(toolButton_Start);
 
-        horizontalSpacer_10 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_10);
-
-        toolButton_Pause = new QToolButton(tab_cam);
+        toolButton_Pause = new QToolButton(tabWidgetPage1);
         toolButton_Pause->setObjectName(QStringLiteral("toolButton_Pause"));
         toolButton_Pause->setMinimumSize(QSize(80, 0));
         toolButton_Pause->setMaximumSize(QSize(80, 16777215));
@@ -208,11 +332,7 @@ public:
 
         horizontalLayout->addWidget(toolButton_Pause);
 
-        horizontalSpacer_12 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_12);
-
-        toolButton_OpenSync = new QToolButton(tab_cam);
+        toolButton_OpenSync = new QToolButton(tabWidgetPage1);
         toolButton_OpenSync->setObjectName(QStringLiteral("toolButton_OpenSync"));
         toolButton_OpenSync->setEnabled(true);
         toolButton_OpenSync->setMinimumSize(QSize(80, 0));
@@ -227,11 +347,7 @@ public:
 
         horizontalLayout->addWidget(toolButton_OpenSync);
 
-        horizontalSpacer_13 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_13);
-
-        toolButton_CloseSync = new QToolButton(tab_cam);
+        toolButton_CloseSync = new QToolButton(tabWidgetPage1);
         toolButton_CloseSync->setObjectName(QStringLiteral("toolButton_CloseSync"));
         toolButton_CloseSync->setMinimumSize(QSize(80, 0));
         toolButton_CloseSync->setMaximumSize(QSize(80, 16777215));
@@ -244,11 +360,7 @@ public:
 
         horizontalLayout->addWidget(toolButton_CloseSync);
 
-        horizontalSpacer_14 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_14);
-
-        toolButton_SetSync = new QToolButton(tab_cam);
+        toolButton_SetSync = new QToolButton(tabWidgetPage1);
         toolButton_SetSync->setObjectName(QStringLiteral("toolButton_SetSync"));
         toolButton_SetSync->setMinimumSize(QSize(80, 0));
         toolButton_SetSync->setMaximumSize(QSize(80, 16777215));
@@ -262,13 +374,37 @@ public:
 
         horizontalLayout->addWidget(toolButton_SetSync);
 
+        horizontalSpacer_10 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_10);
+
+        horizontalSpacer_9 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_9);
+
+        horizontalSpacer_12 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_12);
+
+        horizontalSpacer_13 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_13);
+
+        horizontalSpacer_15 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_15);
+
+        horizontalSpacer_14 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_14);
+
 
         verticalLayout_5->addLayout(horizontalLayout);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        treeWidget = new QTreeWidget(tab_cam);
+        treeWidget = new QTreeWidget(tabWidgetPage1);
         treeWidget->setObjectName(QStringLiteral("treeWidget"));
         QFont font1;
         font1.setFamily(QStringLiteral("ADMUI3Lg"));
@@ -293,20 +429,20 @@ public:
         Layout_ImageShow = new QGridLayout();
         Layout_ImageShow->setSpacing(6);
         Layout_ImageShow->setObjectName(QStringLiteral("Layout_ImageShow"));
-        label_RightUp = new QLabel(tab_cam);
+        label_RightUp = new QLabel(tabWidgetPage1);
         label_RightUp->setObjectName(QStringLiteral("label_RightUp"));
         label_RightUp->setMaximumSize(QSize(800, 600));
         label_RightUp->setStyleSheet(QStringLiteral("background-color: rgb(0, 0, 0);"));
 
         Layout_ImageShow->addWidget(label_RightUp, 1, 1, 1, 1);
 
-        label_7 = new QLabel(tab_cam);
+        label_7 = new QLabel(tabWidgetPage1);
         label_7->setObjectName(QStringLiteral("label_7"));
         label_7->setAlignment(Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft);
 
         Layout_ImageShow->addWidget(label_7, 2, 0, 1, 1);
 
-        label_LeftUp = new QLabel(tab_cam);
+        label_LeftUp = new QLabel(tabWidgetPage1);
         label_LeftUp->setObjectName(QStringLiteral("label_LeftUp"));
         label_LeftUp->setMaximumSize(QSize(800, 600));
         label_LeftUp->setStyleSheet(QStringLiteral("background-color: rgb(0, 0, 0);"));
@@ -314,32 +450,32 @@ public:
 
         Layout_ImageShow->addWidget(label_LeftUp, 1, 0, 1, 1);
 
-        label_8 = new QLabel(tab_cam);
+        label_8 = new QLabel(tabWidgetPage1);
         label_8->setObjectName(QStringLiteral("label_8"));
         label_8->setAlignment(Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft);
 
         Layout_ImageShow->addWidget(label_8, 2, 1, 1, 1);
 
-        label = new QLabel(tab_cam);
+        label = new QLabel(tabWidgetPage1);
         label->setObjectName(QStringLiteral("label"));
         label->setAlignment(Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft);
 
         Layout_ImageShow->addWidget(label, 0, 0, 1, 1);
 
-        label_2 = new QLabel(tab_cam);
+        label_2 = new QLabel(tabWidgetPage1);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setAlignment(Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft);
 
         Layout_ImageShow->addWidget(label_2, 0, 1, 1, 1);
 
-        label_RightDown = new QLabel(tab_cam);
+        label_RightDown = new QLabel(tabWidgetPage1);
         label_RightDown->setObjectName(QStringLiteral("label_RightDown"));
         label_RightDown->setStyleSheet(QStringLiteral("background-color: rgb(0, 0, 0);"));
         label_RightDown->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
 
         Layout_ImageShow->addWidget(label_RightDown, 3, 1, 1, 1);
 
-        label_LeftDown = new QLabel(tab_cam);
+        label_LeftDown = new QLabel(tabWidgetPage1);
         label_LeftDown->setObjectName(QStringLiteral("label_LeftDown"));
         label_LeftDown->setStyleSheet(QStringLiteral("background-color: rgb(0, 0, 0);"));
         label_LeftDown->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
@@ -356,87 +492,7 @@ public:
         verticalLayout_5->setStretch(0, 1);
         verticalLayout_5->setStretch(1, 2);
         verticalLayout_5->setStretch(2, 50);
-        tabWidget->addTab(tab_cam, QString());
-        tab_measure = new QWidget();
-        tab_measure->setObjectName(QStringLiteral("tab_measure"));
-        verticalLayout = new QVBoxLayout(tab_measure);
-        verticalLayout->setSpacing(6);
-        verticalLayout->setContentsMargins(11, 11, 11, 11);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        horizontalLayout_5 = new QHBoxLayout();
-        horizontalLayout_5->setSpacing(6);
-        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
-        label_17 = new QLabel(tab_measure);
-        label_17->setObjectName(QStringLiteral("label_17"));
-
-        horizontalLayout_5->addWidget(label_17);
-
-
-        verticalLayout->addLayout(horizontalLayout_5);
-
-        gridLayout_2 = new QGridLayout();
-        gridLayout_2->setSpacing(6);
-        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
-        label_13 = new QLabel(tab_measure);
-        label_13->setObjectName(QStringLiteral("label_13"));
-
-        gridLayout_2->addWidget(label_13, 0, 0, 1, 1);
-
-        label_11 = new QLabel(tab_measure);
-        label_11->setObjectName(QStringLiteral("label_11"));
-        label_11->setStyleSheet(QStringLiteral("background-color: rgb(3, 3, 3);"));
-
-        gridLayout_2->addWidget(label_11, 3, 0, 1, 1);
-
-        label_10 = new QLabel(tab_measure);
-        label_10->setObjectName(QStringLiteral("label_10"));
-        label_10->setStyleSheet(QStringLiteral("background-color: rgb(3, 3, 3);"));
-
-        gridLayout_2->addWidget(label_10, 1, 1, 1, 1);
-
-        label_14 = new QLabel(tab_measure);
-        label_14->setObjectName(QStringLiteral("label_14"));
-
-        gridLayout_2->addWidget(label_14, 0, 1, 1, 1);
-
-        label_12 = new QLabel(tab_measure);
-        label_12->setObjectName(QStringLiteral("label_12"));
-        label_12->setStyleSheet(QStringLiteral("background-color: rgb(3, 3, 3);"));
-
-        gridLayout_2->addWidget(label_12, 3, 1, 1, 1);
-
-        label_9 = new QLabel(tab_measure);
-        label_9->setObjectName(QStringLiteral("label_9"));
-        label_9->setStyleSheet(QStringLiteral("background-color: rgb(2, 2, 2);"));
-
-        gridLayout_2->addWidget(label_9, 1, 0, 1, 1);
-
-        label_15 = new QLabel(tab_measure);
-        label_15->setObjectName(QStringLiteral("label_15"));
-
-        gridLayout_2->addWidget(label_15, 2, 0, 1, 1);
-
-        label_16 = new QLabel(tab_measure);
-        label_16->setObjectName(QStringLiteral("label_16"));
-
-        gridLayout_2->addWidget(label_16, 2, 1, 1, 1);
-
-        gridLayout_2->setRowStretch(0, 1);
-        gridLayout_2->setRowStretch(1, 10);
-        gridLayout_2->setRowStretch(2, 1);
-        gridLayout_2->setRowStretch(3, 10);
-
-        verticalLayout->addLayout(gridLayout_2);
-
-        verticalLayout->setStretch(0, 1);
-        verticalLayout->setStretch(1, 10);
-        tabWidget->addTab(tab_measure, QString());
-        tab = new QWidget();
-        tab->setObjectName(QStringLiteral("tab"));
-        tabWidget->addTab(tab, QString());
-        tab_2 = new QWidget();
-        tab_2->setObjectName(QStringLiteral("tab_2"));
-        tabWidget->addTab(tab_2, QString());
+        tabWidget->addTab(tabWidgetPage1, QString());
 
         verticalLayout_4->addWidget(tabWidget);
 
@@ -452,13 +508,32 @@ public:
 
     void retranslateUi(QMainWindow *BilletMeasurementClass)
     {
-        BilletMeasurementClass->setWindowTitle(QApplication::translate("BilletMeasurementClass", "BilletMeasurement", 0));
+        BilletMeasurementClass->setWindowTitle(QApplication::translate("BilletMeasurementClass", "\345\234\250\347\272\277\350\275\256\345\273\223\346\265\213\351\207\217\347\263\273\347\273\237", 0));
         action_connect->setText(QApplication::translate("BilletMeasurementClass", "\350\277\236\346\216\245\347\233\270\346\234\272", 0));
         action_disconnect->setText(QApplication::translate("BilletMeasurementClass", "\346\226\255\345\274\200\347\233\270\346\234\272", 0));
         action_start->setText(QApplication::translate("BilletMeasurementClass", "\345\274\200\345\247\213\351\207\207\351\233\206", 0));
         action_pause->setText(QApplication::translate("BilletMeasurementClass", "\345\201\234\346\255\242\351\207\207\351\233\206", 0));
         action_setcamparam->setText(QApplication::translate("BilletMeasurementClass", "\350\256\276\347\275\256\347\233\270\346\234\272\345\217\202\346\225\260", 0));
         action_syncing->setText(QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272\345\220\214\346\255\245\351\207\207\351\233\206", 0));
+#ifndef QT_NO_ACCESSIBILITY
+        tabWidget->setAccessibleDescription(QString());
+#endif // QT_NO_ACCESSIBILITY
+        groupBox_4->setTitle(QApplication::translate("BilletMeasurementClass", "\351\222\242\345\235\257ID", 0));
+        QTreeWidgetItem *___qtreewidgetitem = treeWidget_2->headerItem();
+        ___qtreewidgetitem->setText(1, QApplication::translate("BilletMeasurementClass", "\350\277\233\345\205\245\346\227\266\351\227\264", 0));
+        ___qtreewidgetitem->setText(0, QApplication::translate("BilletMeasurementClass", "\351\222\242\350\275\250ID", 0));
+        groupBox_7->setTitle(QApplication::translate("BilletMeasurementClass", "\345\275\223\345\211\215\351\222\242\345\235\257\344\277\241\346\201\257", 0));
+        QTreeWidgetItem *___qtreewidgetitem1 = treeWidget_5->headerItem();
+        ___qtreewidgetitem1->setText(1, QApplication::translate("BilletMeasurementClass", "\344\277\241\346\201\257", 0));
+        ___qtreewidgetitem1->setText(0, QApplication::translate("BilletMeasurementClass", "\345\220\215\347\247\260", 0));
+        groupBox_3->setTitle(QApplication::translate("BilletMeasurementClass", "\347\263\273\347\273\237\344\277\241\346\201\257", 0));
+        groupBox_8->setTitle(QApplication::translate("BilletMeasurementClass", "\344\274\240\346\204\237\345\231\250\347\212\266\346\200\201", 0));
+        groupBox_9->setTitle(QApplication::translate("BilletMeasurementClass", "\346\225\260\346\215\256\350\257\273\345\217\226\343\200\201\345\255\230\345\202\250", 0));
+        groupBox->setTitle(QApplication::translate("BilletMeasurementClass", "\351\222\242\345\235\257\350\275\256\345\273\223\346\230\276\347\244\272", 0));
+        label_5->setText(QApplication::translate("BilletMeasurementClass", "TextLabel", 0));
+        groupBox_2->setTitle(QApplication::translate("BilletMeasurementClass", "\351\222\242\345\235\257\350\275\256\345\273\223\346\265\213\351\207\217\344\277\241\346\201\257", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("BilletMeasurementClass", "\350\275\256\345\273\223\346\265\213\351\207\217", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("BilletMeasurementClass", "\346\237\245\347\234\213\345\216\206\345\217\262", 0));
         toolButton_Connect->setText(QApplication::translate("BilletMeasurementClass", "\350\277\236\346\216\245\347\233\270\346\234\272", 0));
         toolButton_Disconnect->setText(QApplication::translate("BilletMeasurementClass", "\346\226\255\345\274\200\347\233\270\346\234\272", 0));
         toolButton_Start->setText(QApplication::translate("BilletMeasurementClass", "\345\274\200\345\247\213\351\207\207\351\233\206", 0));
@@ -466,16 +541,16 @@ public:
         toolButton_OpenSync->setText(QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272\345\220\214\346\255\245\351\207\207\351\233\206", 0));
         toolButton_CloseSync->setText(QApplication::translate("BilletMeasurementClass", "\345\205\263\351\227\255\345\220\214\346\255\245\351\207\207\351\233\206", 0));
         toolButton_SetSync->setText(QApplication::translate("BilletMeasurementClass", "\350\256\276\347\275\256\350\247\246\345\217\221\345\217\202\346\225\260", 0));
-        QTreeWidgetItem *___qtreewidgetitem = treeWidget->headerItem();
-        ___qtreewidgetitem->setText(8, QApplication::translate("BilletMeasurementClass", "\345\233\276\345\203\217\351\253\230\345\272\246", 0));
-        ___qtreewidgetitem->setText(7, QApplication::translate("BilletMeasurementClass", "\345\233\276\345\203\217\345\256\275\345\272\246", 0));
-        ___qtreewidgetitem->setText(6, QApplication::translate("BilletMeasurementClass", "\346\233\235\345\205\211\346\227\266\351\227\264", 0));
-        ___qtreewidgetitem->setText(5, QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272\345\270\247\351\242\221", 0));
-        ___qtreewidgetitem->setText(4, QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272\347\212\266\346\200\201", 0));
-        ___qtreewidgetitem->setText(3, QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272IP", 0));
-        ___qtreewidgetitem->setText(2, QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272MAC", 0));
-        ___qtreewidgetitem->setText(1, QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272ID", 0));
-        ___qtreewidgetitem->setText(0, QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272\345\236\213\345\217\267", 0));
+        QTreeWidgetItem *___qtreewidgetitem2 = treeWidget->headerItem();
+        ___qtreewidgetitem2->setText(8, QApplication::translate("BilletMeasurementClass", "\345\233\276\345\203\217\351\253\230\345\272\246", 0));
+        ___qtreewidgetitem2->setText(7, QApplication::translate("BilletMeasurementClass", "\345\233\276\345\203\217\345\256\275\345\272\246", 0));
+        ___qtreewidgetitem2->setText(6, QApplication::translate("BilletMeasurementClass", "\346\233\235\345\205\211\346\227\266\351\227\264", 0));
+        ___qtreewidgetitem2->setText(5, QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272\345\270\247\351\242\221", 0));
+        ___qtreewidgetitem2->setText(4, QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272\347\212\266\346\200\201", 0));
+        ___qtreewidgetitem2->setText(3, QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272IP", 0));
+        ___qtreewidgetitem2->setText(2, QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272MAC", 0));
+        ___qtreewidgetitem2->setText(1, QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272ID", 0));
+        ___qtreewidgetitem2->setText(0, QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272\345\236\213\345\217\267", 0));
         label_RightUp->setText(QString());
         label_7->setText(QApplication::translate("BilletMeasurementClass", "Cam3", 0));
         label_LeftUp->setText(QString());
@@ -484,19 +559,7 @@ public:
         label_2->setText(QApplication::translate("BilletMeasurementClass", "Cam2", 0));
         label_RightDown->setText(QString());
         label_LeftDown->setText(QString());
-        tabWidget->setTabText(tabWidget->indexOf(tab_cam), QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272\351\207\207\351\233\206", 0));
-        label_17->setText(QApplication::translate("BilletMeasurementClass", "\347\256\227\346\263\225\347\232\204\350\277\220\350\241\214\347\212\266\346\200\201\357\274\214\346\214\211\351\222\256\347\255\211", 0));
-        label_13->setText(QApplication::translate("BilletMeasurementClass", "\345\256\236\346\227\266\346\201\242\345\244\215\345\207\272\347\232\204\350\275\256\345\273\223\357\274\210pcl\345\261\225\347\244\272\357\274\211\345\271\266\344\277\235\345\255\230", 0));
-        label_11->setText(QApplication::translate("BilletMeasurementClass", "TextLabel", 0));
-        label_10->setText(QApplication::translate("BilletMeasurementClass", "TextLabel", 0));
-        label_14->setText(QApplication::translate("BilletMeasurementClass", "\345\256\236\346\227\266\350\256\241\347\256\227\345\207\272\347\232\204\350\275\256\345\273\223\345\260\272\345\257\270", 0));
-        label_12->setText(QApplication::translate("BilletMeasurementClass", "TextLabel", 0));
-        label_9->setText(QApplication::translate("BilletMeasurementClass", "TextLabel", 0));
-        label_15->setText(QApplication::translate("BilletMeasurementClass", "\344\271\213\345\211\215\347\232\204\350\275\256\345\273\223\347\232\204\346\225\260\346\215\256", 0));
-        label_16->setText(QApplication::translate("BilletMeasurementClass", "TextLabel", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab_measure), QApplication::translate("BilletMeasurementClass", "\350\275\256\345\273\223\346\265\213\351\207\217", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("BilletMeasurementClass", "\346\235\277\345\235\257\346\265\213\351\207\217", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("BilletMeasurementClass", "\346\226\271\345\235\257\346\265\213\351\207\217", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tabWidgetPage1), QApplication::translate("BilletMeasurementClass", "\347\233\270\346\234\272\351\207\207\351\233\206", 0));
     } // retranslateUi
 
 };

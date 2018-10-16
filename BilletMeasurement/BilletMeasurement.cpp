@@ -11,7 +11,8 @@ BilletMeasurement::BilletMeasurement(QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
-	//setWindowState(Qt::WindowMaximized);
+	setWindowState(Qt::WindowMaximized);
+	//setWindowState(Qt::WindowMinimized);
 	//AllocConsole();
 	//freopen("CONOUT$", "w+t", stdout);
 	LoadIniCamParam();

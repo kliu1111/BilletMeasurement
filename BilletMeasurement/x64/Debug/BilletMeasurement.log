@@ -1,4 +1,4 @@
-﻿生成启动时间为 2018/10/16 13:17:35。
+﻿生成启动时间为 2018/10/16 17:07:39。
      1>项目“H:\KliuWorkspace\BilletMeasurement\BilletMeasurement\BilletMeasurement\BilletMeasurement.vcxproj”在节点 2 上(Build 个目标)。
      1>CustomBuild:
          Uic'ing BilletMeasurement.ui...
@@ -25,4 +25,4 @@
 
 生成成功。
 
-已用时间 00:00:05.42
+已用时间 00:00:05.74
